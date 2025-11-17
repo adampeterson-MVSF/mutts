@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Buddy",
+    "status": "AVAILABLE",
+    "breed": "Golden Retriever",
+    "age": 9,
+    "bioPublic": "Buddy is a sweet old man looking for a soft couch. Loves walks and naps.",
+    "specialNeeds": true,
+    "notesInternal": "Needs daily joint supplement."
+  },
+  {
+    "name": "Molly",
+    "status": "AVAILABLE",
+    "breed": "Beagle Mix",
+    "age": 7,
+    "bioPublic": "Molly is shy but warms up with treats. Good with other dogs.",
+    "specialNeeds": false
+  },
+  {
+    "name": "Charlie",
+    "status": "AVAILABLE",
+    "breed": "Terrier Mix",
+    "age": 12,
+    "bioPublic": "Charlie is a feisty senior who loves car rides and has lots of personality!",
+    "specialNeeds": false,
+    "notesInternal": "Has separation anxiety, needs gradual introduction to new environments."
+  }
+]

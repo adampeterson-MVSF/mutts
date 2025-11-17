@@ -1,0 +1,5 @@
+id,name,email,phone,status,submittedAt,updatedAt
+1,"John Doe","john@example.com","555-0101","PENDING","2024-01-15T10:00:00Z","2024-01-15T10:00:00Z"
+2,"Jane Smith","jane@example.com","555-0102","APPROVED","2024-01-14T14:30:00Z","2024-01-16T09:15:00Z"
+3,"Bob Johnson","bob@example.com","555-0103","REJECTED","2024-01-13T16:45:00Z","2024-01-15T11:20:00Z"
+4,"Alice Brown","alice@example.com","555-0104","PENDING","2024-01-12T12:00:00Z","2024-01-12T12:00:00Z"

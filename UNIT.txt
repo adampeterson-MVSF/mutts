@@ -1,0 +1,1949 @@
+
+> test
+> env -u FORCE_COLOR vitest
+
+
+[1m[44m DEV [49m[22m [34mv4.0.5 [39m[90m/Users/adampeterson/Github/mutts[39m
+
+ [31m❯[39m next.config.test.ts [2m([22m[2m10 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[32m 8[2mms[22m[39m
+[31m       [31m×[31m should have expected domains in allowlist[39m[32m 4[2mms[22m[39m
+       [32m✓[39m should only allow HTTPS protocols[32m 0[2mms[22m[39m
+       [32m✓[39m should include required domains[32m 0[2mms[22m[39m
+       [32m✓[39m should have Supabase storage path restriction[32m 0[2mms[22m[39m
+[31m       [31m×[31m should not allow new domains without explicit approval[39m[32m 1[2mms[22m[39m
+       [32m✓[39m should include all hosts from fix-photo-urls.ts output when file exists[32m 0[2mms[22m[39m
+       [32m✓[39m should not contain overly permissive wildcards[32m 0[2mms[22m[39m
+       [32m✓[39m should have minimum cache TTL configured[32m 0[2mms[22m[39m
+       [32m✓[39m should enable modern image formats[32m 0[2mms[22m[39m
+[31m       [31m×[31m should use custom loader[39m[32m 1[2mms[22m[39m
+ [31m❯[39m lib/schemas.test.ts [2m([22m[2m19 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 8[2mms[22m[39m
+       [32m✓[39m validates correct dog form data[32m 1[2mms[22m[39m
+       [32m✓[39m requires name field[32m 0[2mms[22m[39m
+[31m       [31m×[31m validates dateOfBirth as date or null[39m[32m 3[2mms[22m[39m
+       [32m✓[39m allows nullable optional fields[32m 0[2mms[22m[39m
+       [32m✓[39m validates correct log entry data[32m 0[2mms[22m[39m
+       [32m✓[39m requires dogId and logType[32m 0[2mms[22m[39m
+       [32m✓[39m allows null notes[32m 0[2mms[22m[39m
+       [32m✓[39m validates positive integer shift ID[32m 0[2mms[22m[39m
+       [32m✓[39m rejects invalid shift IDs[32m 0[2mms[22m[39m
+       [32m✓[39m validates correct event form data[32m 0[2mms[22m[39m
+       [32m✓[39m requires title, startTime, and endTime[32m 0[2mms[22m[39m
+       [32m✓[39m validates end time is after start time[32m 0[2mms[22m[39m
+       [32m✓[39m validates correct shift data[32m 0[2mms[22m[39m
+       [32m✓[39m requires title, startsAt, endsAt, and capacity[32m 0[2mms[22m[39m
+       [32m✓[39m validates maxVolunteers is at least 1[32m 0[2mms[22m[39m
+       [32m✓[39m validates start time is before end time[32m 0[2mms[22m[39m
+       [32m✓[39m validates correct application data[32m 0[2mms[22m[39m
+       [32m✓[39m requires reason with minimum length[32m 0[2mms[22m[39m
+       [32m✓[39m validates references array[32m 0[2mms[22m[39m
+ [31m❯[39m lib/actions/__tests__/log.actions.test.ts [2m([22m[2m3 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[32m 6[2mms[22m[39m
+[31m     [31m×[31m should return logs for a specific dog ordered by timestamp descending[39m[32m 4[2mms[22m[39m
+[31m     [31m×[31m should return empty array when dog has no logs[39m[32m 1[2mms[22m[39m
+[31m     [31m×[31m should handle different dog IDs[39m[32m 0[2mms[22m[39m
+ [31m❯[39m lib/actions/__tests__/medical.actions.test.ts [2m([22m[2m4 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[32m 6[2mms[22m[39m
+[31m     [31m×[31m uploads a medical document and records metadata[39m[32m 4[2mms[22m[39m
+[31m     [31m×[31m cleans up uploaded file when an error occurs[39m[32m 0[2mms[22m[39m
+     [32m✓[39m lists medical documents for a dog[32m 1[2mms[22m[39m
+     [32m✓[39m deletes a medical document from storage and database[32m 0[2mms[22m[39m
+ [31m❯[39m components/admin/FosterProfileForm.invite.test.tsx [2m([22m[2m6 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 106[2mms[22m[39m
+     [32m✓[39m renders both Save Changes and Save & Invite buttons[32m 19[2mms[22m[39m
+     [32m✓[39m shows correct profile information[32m 3[2mms[22m[39m
+     [32m✓[39m includes intent value in Save & Invite button[32m 3[2mms[22m[39m
+[31m     [31m×[31m renders all form fields with correct values[39m[32m 72[2mms[22m[39m
+     [32m✓[39m shows success message when form submission succeeds[32m 6[2mms[22m[39m
+     [32m✓[39m handles null foster profile gracefully[32m 2[2mms[22m[39m
+ [32m✓[39m app/admin/edit-dog/[id]/DeleteDogButton.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 234[2mms[22m[39m
+ [32m✓[39m lib/hooks/useDogForm.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 206[2mms[22m[39m
+ [31m❯[39m components/login-form.test.tsx [2m([22m[2m14 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 988[2mms[22m[39m
+     [32m✓[39m renders login form with all required fields[32m 21[2mms[22m[39m
+     [32m✓[39m updates email input value when user types[32m 95[2mms[22m[39m
+     [32m✓[39m updates password input value when user types[32m 43[2mms[22m[39m
+     [32m✓[39m calls supabase.auth.signInWithPassword with correct arguments on form submission[32m 101[2mms[22m[39m
+     [32m✓[39m displays error message when supabase.auth.signInWithPassword fails[32m 106[2mms[22m[39m
+     [32m✓[39m displays generic error message for unexpected errors[32m 104[2mms[22m[39m
+     [32m✓[39m shows loading state on submit button during form submission[32m 91[2mms[22m[39m
+     [32m✓[39m clears error message when user starts typing again[32m 137[2mms[22m[39m
+     [32m✓[39m has proper accessibility attributes[32m 3[2mms[22m[39m
+     [32m✓[39m has correct links for navigation[32m 2[2mms[22m[39m
+     [32m✓[39m prevents form submission when email is empty[32m 45[2mms[22m[39m
+     [32m✓[39m prevents form submission when password is empty[32m 51[2mms[22m[39m
+[31m     [31m×[31m handles successful login without errors[39m[32m 90[2mms[22m[39m
+     [32m✓[39m resets loading state after error[32m 100[2mms[22m[39m
+ [32m✓[39m components/update-password-form.test.tsx [2m([22m[2m14 tests[22m[2m)[22m[33m 615[2mms[22m[39m
+ [32m✓[39m app/admin/AdminDashboardClient.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 53[2mms[22m[39m
+ [32m✓[39m components/admin/shifts/__tests__/CreateShiftDialog.int.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 100[2mms[22m[39m
+ [32m✓[39m components/forgot-password-form.test.tsx [2m([22m[2m14 tests[22m[2m)[22m[33m 763[2mms[22m[39m
+ [32m✓[39m components/admin/applications/__tests__/ApplicantInformation.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+[90mstderr[2m | lib/hooks/useBulkApplicationActions.test.ts[2m > [22m[2museBulkApplicationActions[2m > [22m[2mhandles selection and deselection
+[22m[39mAn update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | lib/hooks/useBulkApplicationActions.test.ts[2m > [22m[2museBulkApplicationActions[2m > [22m[2mhandles select all and clear all
+[22m[39mAn update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | lib/hooks/useBulkApplicationActions.test.ts[2m > [22m[2museBulkApplicationActions[2m > [22m[2mcalculates indeterminate and allSelected correctly
+[22m[39mAn update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | lib/hooks/useBulkApplicationActions.test.ts[2m > [22m[2museBulkApplicationActions[2m > [22m[2mfetches staff users only when an item is selected
+[22m[39mAn update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32m✓[39m lib/hooks/useBulkApplicationActions.test.ts [2m([22m[2m10 tests[22m[2m | [22m[33m2 skipped[39m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m components/volunteer/__tests__/ShiftList.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 43[2mms[22m[39m
+ [32m✓[39m lib/zod/__tests__/applicationSchema.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m components/admin/__tests__/MedicalRecordTable.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 40[2mms[22m[39m
+ [32m✓[39m components/sign-up-form.test.tsx [2m([22m[2m16 tests[22m[2m)[22m[33m 1254[2mms[22m[39m
+ [32m✓[39m components/admin/applications/__tests__/ReferencesSection.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+ [32m✓[39m components/ui/form-error.a11y.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/dog.actions.test.ts [2m([22m[2m32 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m lib/hooks/useApplicationsFilters.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould successfully submit an application with valid data
+[22m[39msubmitApplication called with formData keys: [
+  [32m'formType'[39m,
+  [32m'reason'[39m,
+  [32m'address'[39m,
+  [32m'housingType'[39m,
+  [32m'hasYard'[39m,
+  [32m'yardFenced'[39m,
+  [32m'homeEnvironmentDescription'[39m,
+  [32m'references'[39m
+]
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould successfully submit an application with valid data
+[22m[39msubmitApplication: user authenticated, proceeding with submission
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould successfully submit an application with valid data
+[22m[39msubmitApplication: application created successfully with ID: [33m1[39m
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould return validation errors for invalid data
+[22m[39msubmitApplication called with formData keys: [ [32m'formType'[39m, [32m'reason'[39m ]
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould return validation errors for invalid data
+[22m[39msubmitApplication: user authenticated, proceeding with submission
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould return error when user is not authenticated
+[22m[39msubmitApplication called with formData keys: []
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould return error when user is not authenticated
+[22m[39msubmitApplication: user not authenticated
+
+ [32m✓[39m lib/actions/__tests__/application.actions.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 48[2mms[22m[39m
+ [32m✓[39m components/admin/applications/__tests__/HomeEnvironment.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/shift-signup.actions.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m lib/__tests__/utils.test.ts [2m([22m[2m35 tests[22m[2m)[22m[32m 23[2mms[22m[39m
+ [32m✓[39m components/admin/applications/__tests__/VetInformation.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+{"level":30,"time":1762185602129,"service":"senior-dog-rescue","hostname":"unknown","requestId":"ec73d21f-6949-4702-aad4-b59d8d1c72b4","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":30,"time":1762185602130,"service":"senior-dog-rescue","hostname":"unknown","requestId":"ec73d21f-6949-4702-aad4-b59d8d1c72b4","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userId":null,"hasClaims":false,"msg":"Resolved user context"}
+{"level":30,"time":1762185602130,"service":"senior-dog-rescue","hostname":"unknown","metric":"auth.redirects","route":"/admin","reason":"no_session","value":1,"msg":"Authentication redirect"}
+{"level":40,"time":1762185602131,"service":"senior-dog-rescue","hostname":"unknown","requestId":"ec73d21f-6949-4702-aad4-b59d8d1c72b4","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userId":null,"userRole":null,"msg":"Access denied → redirecting to login"}
+{"level":30,"time":1762185602131,"service":"senior-dog-rescue","hostname":"unknown","requestId":"55e10c8b-eb6b-4cdd-84df-3d7cfc10a74d","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":30,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","requestId":"55e10c8b-eb6b-4cdd-84df-3d7cfc10a74d","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","userId":"user-1","hasClaims":true,"msg":"Resolved user context"}
+{"level":30,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","requestId":"55e10c8b-eb6b-4cdd-84df-3d7cfc10a74d","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","hasAccess":true,"msg":"Access check result"}
+{"level":30,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","requestId":"55e10c8b-eb6b-4cdd-84df-3d7cfc10a74d","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","msg":"Allowing request to continue"}
+{"level":30,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","requestId":"739b23c9-d003-4141-a223-0d92cff81dfb","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":30,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","requestId":"739b23c9-d003-4141-a223-0d92cff81dfb","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"VOLUNTEER","userId":"user-2","hasClaims":true,"msg":"Resolved user context"}
+{"level":30,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","requestId":"739b23c9-d003-4141-a223-0d92cff81dfb","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"VOLUNTEER","hasAccess":false,"msg":"Access check result"}
+{"level":30,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","metric":"auth.redirects","route":"/admin","reason":"insufficient_role","userRole":"VOLUNTEER","value":1,"msg":"Authentication redirect"}
+{"level":40,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","requestId":"739b23c9-d003-4141-a223-0d92cff81dfb","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userId":"user-2","userRole":"VOLUNTEER","msg":"Access denied → redirecting to login"}
+{"level":30,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","requestId":"4d67c91a-34b2-4347-b26a-68900a41b449","route":"/api/test-api/reset","pathname":"/api/test-api/reset","method":"GET","cookies":[{"name":"test_role","value":"VOLUNTEER"},{"name":"test_user_id","value":"test-user"}],"msg":"Incoming request"}
+{"level":30,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","requestId":"4d67c91a-34b2-4347-b26a-68900a41b449","route":"/api/test-api/reset","pathname":"/api/test-api/reset","requiredRole":"VOLUNTEER","userRole":"VOLUNTEER","userId":"test-user","hasClaims":true,"msg":"Resolved user context"}
+{"level":30,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","requestId":"4d67c91a-34b2-4347-b26a-68900a41b449","route":"/api/test-api/reset","pathname":"/api/test-api/reset","requiredRole":"VOLUNTEER","userRole":"VOLUNTEER","hasAccess":true,"msg":"Access check result"}
+{"level":30,"time":1762185602132,"service":"senior-dog-rescue","hostname":"unknown","requestId":"4d67c91a-34b2-4347-b26a-68900a41b449","route":"/api/test-api/reset","pathname":"/api/test-api/reset","requiredRole":"VOLUNTEER","userRole":"VOLUNTEER","msg":"Allowing request to continue"}
+{"level":30,"time":1762185602133,"service":"senior-dog-rescue","hostname":"unknown","requestId":"131515bd-7e02-412f-8a11-d50980f5643b","route":"/api/dogs","pathname":"/api/dogs","method":"GET","cookies":[{"name":"test_role","value":"STAFF"},{"name":"test_user_id","value":"test-user"}],"msg":"Incoming request"}
+{"level":30,"time":1762185602133,"service":"senior-dog-rescue","hostname":"unknown","requestId":"131515bd-7e02-412f-8a11-d50980f5643b","route":"/api/dogs","pathname":"/api/dogs","requiredRole":"STAFF","userRole":"STAFF","userId":"test-user","hasClaims":true,"msg":"Resolved user context"}
+{"level":30,"time":1762185602133,"service":"senior-dog-rescue","hostname":"unknown","requestId":"131515bd-7e02-412f-8a11-d50980f5643b","route":"/api/dogs","pathname":"/api/dogs","requiredRole":"STAFF","userRole":"STAFF","hasAccess":true,"msg":"Access check result"}
+{"level":30,"time":1762185602133,"service":"senior-dog-rescue","hostname":"unknown","requestId":"131515bd-7e02-412f-8a11-d50980f5643b","route":"/api/dogs","pathname":"/api/dogs","requiredRole":"STAFF","userRole":"STAFF","msg":"Allowing request to continue"}
+{"level":30,"time":1762185602133,"service":"senior-dog-rescue","hostname":"unknown","requestId":"09acdaf6-891b-4c5e-a7dc-5d87fa1c8e50","route":"/api/dogs","pathname":"/api/dogs","method":"GET","cookies":[{"name":"test_role","value":"STAFF"},{"name":"test_user_id","value":"test-user"}],"msg":"Incoming request"}
+{"level":30,"time":1762185602133,"service":"senior-dog-rescue","hostname":"unknown","requestId":"cbe1e38c-9462-4c76-bbbd-c9ae91751a3d","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":50,"time":1762185602133,"service":"senior-dog-rescue","hostname":"unknown","requestId":"cbe1e38c-9462-4c76-bbbd-c9ae91751a3d","route":"/admin","pathname":"/admin","nodeEnv":"production","msg":"Fail-closed triggered: missing required env vars"}
+{"level":30,"time":1762185602134,"service":"senior-dog-rescue","hostname":"unknown","requestId":"47090e9c-4f7c-497d-ba7b-f41c532be38c","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":30,"time":1762185602134,"service":"senior-dog-rescue","hostname":"unknown","requestId":"47090e9c-4f7c-497d-ba7b-f41c532be38c","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","userId":"user-1","hasClaims":true,"msg":"Resolved user context"}
+{"level":30,"time":1762185602134,"service":"senior-dog-rescue","hostname":"unknown","requestId":"47090e9c-4f7c-497d-ba7b-f41c532be38c","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","hasAccess":true,"msg":"Access check result"}
+{"level":30,"time":1762185602134,"service":"senior-dog-rescue","hostname":"unknown","requestId":"47090e9c-4f7c-497d-ba7b-f41c532be38c","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","msg":"Allowing request to continue"}
+{"level":30,"time":1762185602134,"service":"senior-dog-rescue","hostname":"unknown","requestId":"1bdc7c73-abb9-4491-8e2e-2b3666a90b17","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":50,"time":1762185602134,"service":"senior-dog-rescue","hostname":"unknown","requestId":"1bdc7c73-abb9-4491-8e2e-2b3666a90b17","route":"/admin","pathname":"/admin","nodeEnv":"production","msg":"Fail-closed triggered: missing required env vars"}
+ [32m✓[39m middleware.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/validation.schemas.test.ts [2m([22m[2m35 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/shift.actions.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+{"level":40,"time":1762185602331,"service":"senior-dog-rescue","hostname":"unknown","metric":"unknown_image_host_rejections","host":"evil-domain.com","route":"image-loader","value":1,"msg":"Unknown image host rejected"}
+{"level":40,"time":1762185602331,"service":"senior-dog-rescue","hostname":"unknown","metric":"unknown_image_host_rejections","host":"another-evil.com","route":"image-loader","value":1,"msg":"Unknown image host rejected"}
+{"level":40,"time":1762185602331,"service":"senior-dog-rescue","hostname":"unknown","metric":"unknown_image_host_rejections","host":"127.0.0.1","route":"image-loader","value":1,"msg":"Unknown image host rejected"}
+ [32m✓[39m lib/__tests__/image-loader.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m lib/zod/__tests__/shift.schema.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/event.actions.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/foster.actions.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m lib/actions/application.actions.bulk.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m lib/actions/foster.actions.csv.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [31m❯[39m components/admin/MedicalDocumentManager.progress.test.tsx [2m([22m[2m3 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[33m 3253[2mms[22m[39m
+[31m     [31m×[31m shows progress bar during upload[39m[33m 1040[2mms[22m[39m
+[31m     [31m×[31m updates progress percentage and clears at 100%[39m[33m 1041[2mms[22m[39m
+[31m     [31m×[31m shows retry button on upload failure[39m[33m 1171[2mms[22m[39m
+[90mstderr[2m | lib/rate-limiter.test.ts[2m > [22m[2mRate Limiter[2m > [22m[2mcreateRateLimiter[2m > [22m[2mshould fallback to MemoryRateLimiter in production without Redis env vars
+[22m[39mRedis environment variables not found, falling back to memory rate limiter
+
+ [32m✓[39m lib/rate-limiter.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+[90mstdout[2m | lib/actions/notifications.actions.test.ts[2m > [22m[2msendFosterInvite[2m > [22m[2msuccessfully sends invitation (stub implementation)
+[22m[39mFoster invite sent { profileId: [32m'profile-123'[39m }
+
+ [32m✓[39m lib/actions/notifications.actions.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/user.actions.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/user.actions.simple.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m lib/security-headers.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m scripts/__tests__/enrich-dogs.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m lib/csv.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+ [32m✓[39m __tests__/middleware.headers.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 1[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 14 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m next.config.test.ts[2m > [22mNext.js Image Configuration[2m > [22mremotePatterns allowlist[2m > [22mshould have expected domains in allowlist
+[31m[1mError[22m: Snapshot `Next.js Image Configuration > remotePatterns allowlist > should have expected domains in allowlist 1` mismatched[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[2m    "assets.adoptapet.com",[22m
+[2m    "dl5zpyw5k3jeb.cloudfront.net",[22m
+[32m-   "external.xx.fbcdn.net",[39m
+[2m    "localhost",[22m
+[2m    "muttville.org",[22m
+[2m    "picsum.photos",[22m
+[32m-   "scontent.xx.fbcdn.net",[39m
+[2m    "via.placeholder.com",[22m
+[2m  ][22m
+
+[36m [2m❯[22m next.config.test.ts:[2m20:25[22m[39m
+    [90m 18| [39m      const hostnames = remotePatterns.map(pattern => pattern.hostname…
+    [90m 19| [39m
+    [90m 20| [39m      [34mexpect[39m(hostnames)[33m.[39m[34mtoMatchSnapshot[39m()[33m;[39m
+    [90m   | [39m                        [31m^[39m
+    [90m 21| [39m    })[33m;[39m
+    [90m 22| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m next.config.test.ts[2m > [22mNext.js Image Configuration[2m > [22mremotePatterns allowlist[2m > [22mshould not allow new domains without explicit approval
+[31m[1mAssertionError[22m: expected [ 'via.placeholder.com', …(5) ] to include 'scontent.xx.fbcdn.net'[39m
+[36m [2m❯[22m next.config.test.ts:[2m79:27[22m[39m
+    [90m 77| [39m      [90m// All approved domains should be present[39m
+    [90m 78| [39m      approvedDomains[33m.[39m[34mforEach[39m(domain [33m=>[39m {
+    [90m 79| [39m        [34mexpect[39m(hostnames)[33m.[39m[34mtoContain[39m(domain)[33m;[39m
+    [90m   | [39m                          [31m^[39m
+    [90m 80| [39m      })[33m;[39m
+    [90m 81| [39m    })[33m;[39m
+[90m [2m❯[22m next.config.test.ts:[2m78:23[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m next.config.test.ts[2m > [22mNext.js Image Configuration[2m > [22mimage optimization settings[2m > [22mshould use custom loader
+[31m[1mAssertionError[22m: expected undefined to be './lib/image-loader.ts' // Object.is equality[39m
+
+[32m- Expected:[39m 
+"./lib/image-loader.ts"
+
+[31m+ Received:[39m 
+undefined
+
+[36m [2m❯[22m next.config.test.ts:[2m134:41[22m[39m
+    [90m132| [39m
+    [90m133| [39m    [34mit[39m([32m'should use custom loader'[39m[33m,[39m () [33m=>[39m {
+    [90m134| [39m      [34mexpect[39m(config[33m.[39mimages[33m?.[39mloaderFile)[33m.[39m[34mtoBe[39m([32m'./lib/image-loader.ts'[39m)[33m;[39m
+    [90m   | [39m                                        [31m^[39m
+    [90m135| [39m    })[33m;[39m
+    [90m136| [39m  })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/schemas.test.ts[2m > [22mSchemas[2m > [22mdogFormSchema[2m > [22mvalidates dateOfBirth as date or null
+[31m[1mAssertionError[22m: expected true to be false // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- false[39m
+[31m+ true[39m
+
+[36m [2m❯[22m lib/schemas.test.ts:[2m56:31[22m[39m
+    [90m 54| [39m      const invalidData = { name: 'Buddy', dateOfBirth: 'invalid-date'…
+    [90m 55| [39m      [35mconst[39m result2 [33m=[39m dogFormSchema[33m.[39m[34msafeParse[39m(invalidData)[33m;[39m
+    [90m 56| [39m      [34mexpect[39m(result2[33m.[39msuccess)[33m.[39m[34mtoBe[39m([35mfalse[39m)[33m;[39m
+    [90m   | [39m                              [31m^[39m
+    [90m 57| [39m    })[33m;[39m
+    [90m 58| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m components/login-form.test.tsx[2m > [22mLoginForm[2m > [22mhandles successful login without errors
+[31m[1mError[22m: [2mexpect([22m[31melement[31m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <p
+  class="text-sm text-red-500"
+  data-testid="message-error"
+>
+  supabase.auth.getUser is not a function
+</p> instead[31m[39m
+[36m [2m❯[22m components/login-form.test.tsx:[2m265:55[22m[39m
+    [90m263| [39m    
+    [90m264| [39m    [90m// Should not show error message[39m
+    [90m265| [39m    expect(screen.queryByTestId('message-error')).not.toBeInTheDocumen…
+    [90m   | [39m                                                      [31m^[39m
+    [90m266| [39m  })
+    [90m267| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m components/admin/FosterProfileForm.invite.test.tsx[2m > [22mFosterProfileForm - Save & Invite[2m > [22mrenders all form fields with correct values
+[31m[1mError[22m: [2mexpect([22m[31melement[31m[2m).toBeChecked()[22m
+
+Received element is not checked:
+  [31m<input
+  id="hasCats"
+  name="hasCats"
+  type="checkbox"
+/>[31m[39m
+[36m [2m❯[22m components/admin/FosterProfileForm.invite.test.tsx:[2m188:29[22m[39m
+    [90m186| [39m    const notesTextarea = screen.getByPlaceholderText("Add internal no…
+    [90m187| [39m
+    [90m188| [39m    [34mexpect[39m(comfortCheckbox)[33m.[39m[34mtoBeChecked[39m()[33m;[39m
+    [90m   | [39m                            [31m^[39m
+    [90m189| [39m    [34mexpect[39m(dogsCheckbox)[33m.[39mnot[33m.[39m[34mtoBeChecked[39m()[33m;[39m
+    [90m190| [39m    [34mexpect[39m(medsCheckbox)[33m.[39m[34mtoBeChecked[39m()[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m components/admin/MedicalDocumentManager.progress.test.tsx[2m > [22mMedicalDocumentManager - Upload Progress[2m > [22mshows progress bar during upload
+[31m[1mError[22m[39m: [2mexpect([22m[31melement[39m[2m).not.toBeDisabled()[22m
+
+Received element is disabled:
+  [31m<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"
+  data-slot="button"
+  data-testid="start-upload"
+  disabled=""
+  type="button"
+/>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"space-y-6"[39m
+      [36m>[39m
+        [36m<div>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"text-2xl font-bold mb-4"[39m
+          [36m>[39m
+            [0mMedical Documents[0m
+          [36m</h2>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-sm text-muted-foreground"[39m
+          [36m>[39m
+            [0mUpload vet reports, X-rays, and supporting documents for this dog.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"grid gap-3 rounded-md border border-border p-4"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"grid gap-2"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"[39m
+              [33mdata-slot[39m=[32m"label"[39m
+              [33mfor[39m=[32m"medicalDocument"[39m
+            [36m>[39m
+              [0mMedical document[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maccept[39m=[32m"application/pdf,image/*"[39m
+              [33maria-label[39m=[32m"Upload medical document"[39m
+              [33mclass[39m=[32m"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"[39m
+              [33mid[39m=[32m"medicalDocument"[39m
+              [33mname[39m=[32m"file"[39m
+              [33mtype[39m=[32m"file"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex justify-end gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mdata-testid[39m=[32m"start-upload"[39m
+              [33mdisabled[39m=[32m""[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mUpload[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"space-y-3"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"text-xl font-semibold"[39m
+          [36m>[39m
+            [0mUploaded documents[0m
+          [36m</h3>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"space-y-3"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex flex-col gap-2 rounded-md border border-border p-4 md:flex-row md:items-center md:justify-between"[39m
+            [36m>[39m
+              [36m<div>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"font-medium text-primary hover:underline"[39m
+                  [33mhref[39m=[32m"https://example.com/test.pdf"[39m
+                  [33mrel[39m=[32m"noopener noreferrer"[39m
+                  [33mtarget[39m=[32m"_blank"[39m
+                [36m>[39m
+                  [0mtest.pdf[0m
+                [36m</a>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+                [36m>[39m
+                  [0mUploaded [0m
+                  [36m<span>[39m
+                    [0m11/3/2025[0m
+                  [36m</span>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mDelete[0m
+              [36m</button>[39m
+            [36m</li>[39m
+          [36m</ul>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[36m [2m❯[22m components/admin/MedicalDocumentManager.progress.test.tsx:[2m32:44[22m[39m
+    [90m 30| [39m
+    [90m 31| [39m    [35mconst[39m button [33m=[39m screen[33m.[39m[34mgetByTestId[39m([32m"start-upload"[39m)[33m;[39m
+    [90m 32| [39m    [35mawait[39m [34mwaitFor[39m(() [33m=>[39m [34mexpect[39m(button)[33m.[39mnot[33m.[39m[34mtoBeDisabled[39m())[33m;[39m
+    [90m   | [39m                                           [31m^[39m
+    [90m 33| [39m
+    [90m 34| [39m    [35mawait[39m user[33m.[39m[34mclick[39m(button)[33m;[39m
+[90m [2m❯[22m runWithExpensiveErrorDiagnosticsDisabled node_modules/@testing-library/dom/dist/config.js:[2m47:12[22m[39m
+[90m [2m❯[22m checkCallback node_modules/@testing-library/dom/dist/wait-for.js:[2m124:77[22m[39m
+[90m [2m❯[22m Timeout.checkRealTimersCallback node_modules/@testing-library/dom/dist/wait-for.js:[2m118:16[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m components/admin/MedicalDocumentManager.progress.test.tsx[2m > [22mMedicalDocumentManager - Upload Progress[2m > [22mupdates progress percentage and clears at 100%
+[31m[1mError[22m[39m: [2mexpect([22m[31melement[39m[2m).not.toBeDisabled()[22m
+
+Received element is disabled:
+  [31m<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"
+  data-slot="button"
+  data-testid="start-upload"
+  disabled=""
+  type="button"
+/>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"space-y-6"[39m
+      [36m>[39m
+        [36m<div>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"text-2xl font-bold mb-4"[39m
+          [36m>[39m
+            [0mMedical Documents[0m
+          [36m</h2>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-sm text-muted-foreground"[39m
+          [36m>[39m
+            [0mUpload vet reports, X-rays, and supporting documents for this dog.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"grid gap-3 rounded-md border border-border p-4"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"grid gap-2"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"[39m
+              [33mdata-slot[39m=[32m"label"[39m
+              [33mfor[39m=[32m"medicalDocument"[39m
+            [36m>[39m
+              [0mMedical document[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maccept[39m=[32m"application/pdf,image/*"[39m
+              [33maria-label[39m=[32m"Upload medical document"[39m
+              [33mclass[39m=[32m"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"[39m
+              [33mid[39m=[32m"medicalDocument"[39m
+              [33mname[39m=[32m"file"[39m
+              [33mtype[39m=[32m"file"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex justify-end gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mdata-testid[39m=[32m"start-upload"[39m
+              [33mdisabled[39m=[32m""[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mUpload[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"space-y-3"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"text-xl font-semibold"[39m
+          [36m>[39m
+            [0mUploaded documents[0m
+          [36m</h3>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"space-y-3"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex flex-col gap-2 rounded-md border border-border p-4 md:flex-row md:items-center md:justify-between"[39m
+            [36m>[39m
+              [36m<div>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"font-medium text-primary hover:underline"[39m
+                  [33mhref[39m=[32m"https://example.com/test.pdf"[39m
+                  [33mrel[39m=[32m"noopener noreferrer"[39m
+                  [33mtarget[39m=[32m"_blank"[39m
+                [36m>[39m
+                  [0mtest.pdf[0m
+                [36m</a>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+                [36m>[39m
+                  [0mUploaded [0m
+                  [36m<span>[39m
+                    [0m11/3/2025[0m
+                  [36m</span>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mDelete[0m
+              [36m</button>[39m
+            [36m</li>[39m
+          [36m</ul>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[36m [2m❯[22m components/admin/MedicalDocumentManager.progress.test.tsx:[2m47:44[22m[39m
+    [90m 45| [39m
+    [90m 46| [39m    [35mconst[39m button [33m=[39m screen[33m.[39m[34mgetByTestId[39m([32m"start-upload"[39m)[33m;[39m
+    [90m 47| [39m    [35mawait[39m [34mwaitFor[39m(() [33m=>[39m [34mexpect[39m(button)[33m.[39mnot[33m.[39m[34mtoBeDisabled[39m())[33m;[39m
+    [90m   | [39m                                           [31m^[39m
+    [90m 48| [39m
+    [90m 49| [39m    [35mawait[39m user[33m.[39m[34mclick[39m(button)[33m;[39m
+[90m [2m❯[22m runWithExpensiveErrorDiagnosticsDisabled node_modules/@testing-library/dom/dist/config.js:[2m47:12[22m[39m
+[90m [2m❯[22m checkCallback node_modules/@testing-library/dom/dist/wait-for.js:[2m124:77[22m[39m
+[90m [2m❯[22m Timeout.checkRealTimersCallback node_modules/@testing-library/dom/dist/wait-for.js:[2m118:16[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m components/admin/MedicalDocumentManager.progress.test.tsx[2m > [22mMedicalDocumentManager - Upload Progress[2m > [22mshows retry button on upload failure
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element by: [data-testid="upload-error"]
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"space-y-6"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-2xl font-bold mb-4"[39m
+        [36m>[39m
+          [0mMedical Documents[0m
+        [36m</h2>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0mUpload vet reports, X-rays, and supporting documents for this dog.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"grid gap-3 rounded-md border border-border p-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"grid gap-2"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"[39m
+            [33mdata-slot[39m=[32m"label"[39m
+            [33mfor[39m=[32m"medicalDocument"[39m
+          [36m>[39m
+            [0mMedical document[0m
+          [36m</label>[39m
+          [36m<input[39m
+            [33maccept[39m=[32m"application/pdf,image/*"[39m
+            [33maria-label[39m=[32m"Upload medical document"[39m
+            [33mclass[39m=[32m"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"[39m
+            [33mid[39m=[32m"medicalDocument"[39m
+            [33mname[39m=[32m"file"[39m
+            [33mtype[39m=[32m"file"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex justify-end gap-2"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mdata-testid[39m=[32m"start-upload"[39m
+            [33mdisabled[39m=[32m""[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mUpload[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"space-y-3"[39m
+      [36m>[39m
+        [36m<h3[39m
+          [33mclass[39m=[32m"text-xl font-semibold"[39m
+        [36m>[39m
+          [0mUploaded documents[0m
+        [36m</h3>[39m
+        [36m<ul[39m
+          [33mclass[39m=[32m"space-y-3"[39m
+        [36m>[39m
+          [36m<li[39m
+            [33mclass[39m=[32m"flex flex-col gap-2 rounded-md border border-border p-4 md:flex-row md:items-center md:justify-between"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-medium text-primary hover:underline"[39m
+                [33mhref[39m=[32m"https://example.com/test.pdf"[39m
+                [33mrel[39m=[32m"noopener noreferrer"[39m
+                [33mtarget[39m=[32m"_blank"[39m
+              [36m>[39m
+                [0mtest.pdf[0m
+              [36m</a>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+              [36m>[39m
+                [0mUploaded [0m
+                [36m<span>[39m
+                  [0m11/3/2025[0m
+                [36m</span>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mDelete[0m
+            [36m</button>[39m
+          [36m</li>[39m
+        [36m</ul>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"space-y-6"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-2xl font-bold mb-4"[39m
+        [36m>[39m
+          [0mMedical Documents[0m
+        [36m</h2>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0mUpload vet reports, X-rays, and supporting documents for this dog.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"grid gap-3 rounded-md border border-border p-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"grid gap-2"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"[39m
+            [33mdata-slot[39m=[32m"label"[39m
+            [33mfor[39m=[32m"medicalDocument"[39m
+          [36m>[39m
+            [0mMedical document[0m
+          [36m</label>[39m
+          [36m<input[39m
+            [33maccept[39m=[32m"application/pdf,image/*"[39m
+            [33maria-label[39m=[32m"Upload medical document"[39m
+            [33mclass[39m=[32m"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"[39m
+            [33mid[39m=[32m"medicalDocument"[39m
+            [33mname[39m=[32m"file"[39m
+            [33mtype[39m=[32m"file"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex justify-end gap-2"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mdata-testid[39m=[32m"start-upload"[39m
+            [33mdisabled[39m=[32m""[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mUpload[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"space-y-3"[39m
+      [36m>[39m
+        [36m<h3[39m
+          [33mclass[39m=[32m"text-xl font-semibold"[39m
+        [36m>[39m
+          [0mUploaded documents[0m
+        [36m</h3>[39m
+        [36m<ul[39m
+          [33mclass[39m=[32m"space-y-3"[39m
+        [36m>[39m
+          [36m<li[39m
+            [33mclass[39m=[32m"flex flex-col gap-2 rounded-md border border-border p-4 md:flex-row md:items-center md:justify-between"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-medium text-primary hover:underline"[39m
+                [33mhref[39m=[32m"https://example.com/test.pdf"[39m
+                [33mrel[39m=[32m"noopener noreferrer"[39m
+                [33mtarget[39m=[32m"_blank"[39m
+              [36m>[39m
+                [0mtest.pdf[0m
+              [36m</a>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+              [36m>[39m
+                [0mUploaded [0m
+                [36m<span>[39m
+                  [0m11/3/2025[0m
+                [36m</span>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mDelete[0m
+            [36m</button>[39m
+          [36m</li>[39m
+        [36m</ul>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m86:33[22m[39m
+[36m [2m❯[22m components/admin/MedicalDocumentManager.progress.test.tsx:[2m68:25[22m[39m
+    [90m 66| [39m    [35mawait[39m user[33m.[39m[34mclick[39m(screen[33m.[39m[34mgetByTestId[39m([32m"start-upload"[39m))[33m;[39m
+    [90m 67| [39m
+    [90m 68| [39m    expect(await screen.findByTestId("upload-error")).toBeInTheDocumen…
+    [90m   | [39m                        [31m^[39m
+    [90m 69| [39m    [34mexpect[39m(screen[33m.[39m[34mgetByTestId[39m([32m"retry-upload"[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m 70| [39m  })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/actions/__tests__/log.actions.test.ts[2m > [22mgetActivityLogs[2m > [22mshould return logs for a specific dog ordered by timestamp descending
+[31m[1mAssertionError[22m: expected undefined to deeply equal [ { id: 1, …(6) }, { id: 2, …(6) } ][39m
+
+[32m- Expected:[39m 
+[
+  {
+    "createdAt": 2024-01-02T10:00:00.000Z,
+    "createdByUser": {
+      "id": "user-1",
+      "name": "John Doe",
+    },
+    "createdByUserId": "user-1",
+    "dogId": 1,
+    "id": 1,
+    "note": "Good walk",
+    "type": "NOTE",
+  },
+  {
+    "createdAt": 2024-01-01T09:00:00.000Z,
+    "createdByUser": {
+      "id": "user-2",
+      "name": "Jane Smith",
+    },
+    "createdByUserId": "user-2",
+    "dogId": 1,
+    "id": 2,
+    "note": "Fed breakfast",
+    "type": "CALL",
+  },
+]
+
+[31m+ Received:[39m 
+undefined
+
+[36m [2m❯[22m lib/actions/__tests__/log.actions.test.ts:[2m69:20[22m[39m
+    [90m 67| [39m
+    [90m 68| [39m    [90m// Assert[39m
+    [90m 69| [39m    [34mexpect[39m(result)[33m.[39m[34mtoEqual[39m(mockLogs)
+    [90m   | [39m                   [31m^[39m
+    [90m 70| [39m    [34mexpect[39m(prisma[33m.[39mactivityLog[33m.[39mfindMany)[33m.[39m[34mtoHaveBeenCalledWith[39m({
+    [90m 71| [39m      where[33m:[39m { dogId }[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/actions/__tests__/log.actions.test.ts[2m > [22mgetActivityLogs[2m > [22mshould return empty array when dog has no logs
+[31m[1mAssertionError[22m: expected undefined to deeply equal [][39m
+
+[32m- Expected:[39m 
+[]
+
+[31m+ Received:[39m 
+undefined
+
+[36m [2m❯[22m lib/actions/__tests__/log.actions.test.ts:[2m93:20[22m[39m
+    [90m 91| [39m
+    [90m 92| [39m    [90m// Assert[39m
+    [90m 93| [39m    [34mexpect[39m(result)[33m.[39m[34mtoEqual[39m([])
+    [90m   | [39m                   [31m^[39m
+    [90m 94| [39m  })
+    [90m 95| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/actions/__tests__/log.actions.test.ts[2m > [22mgetActivityLogs[2m > [22mshould handle different dog IDs
+[31m[1mAssertionError[22m: expected undefined to deeply equal [ { id: 3, …(6) } ][39m
+
+[32m- Expected:[39m 
+[
+  {
+    "createdAt": 2024-01-01T10:00:00.000Z,
+    "createdByUser": {
+      "id": "user-3",
+      "name": "Bob Wilson",
+    },
+    "createdByUserId": "user-3",
+    "dogId": 42,
+    "id": 3,
+    "note": "Outdoor break",
+    "type": "VISIT",
+  },
+]
+
+[31m+ Received:[39m 
+undefined
+
+[36m [2m❯[22m lib/actions/__tests__/log.actions.test.ts:[2m120:20[22m[39m
+    [90m118| [39m
+    [90m119| [39m    [90m// Assert[39m
+    [90m120| [39m    [34mexpect[39m(result)[33m.[39m[34mtoEqual[39m(mockLogs)
+    [90m   | [39m                   [31m^[39m
+    [90m121| [39m    [34mexpect[39m(prisma[33m.[39mactivityLog[33m.[39mfindMany)[33m.[39m[34mtoHaveBeenCalledWith[39m({
+    [90m122| [39m      where[33m:[39m { dogId[33m:[39m [34m42[39m }[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/actions/__tests__/medical.actions.test.ts[2m > [22mmedical document actions[2m > [22muploads a medical document and records metadata
+[31m[1mAssertionError[22m: expected "vi.fn()" to be called with arguments: [ { data: ObjectContaining{…} } ][90m
+
+Number of calls: [1m0[22m
+[31m[39m
+[36m [2m❯[22m lib/actions/__tests__/medical.actions.test.ts:[2m88:43[22m[39m
+    [90m 86| [39m    [34mexpect[39m(createClient)[33m.[39mnot[33m.[39m[34mtoHaveBeenCalled[39m()
+    [90m 87| [39m
+    [90m 88| [39m    [34mexpect[39m(prisma[33m.[39mmedicalDocument[33m.[39mcreate)[33m.[39m[34mtoHaveBeenCalledWith[39m({
+    [90m   | [39m                                          [31m^[39m
+    [90m 89| [39m      data[33m:[39m expect[33m.[39m[34mobjectContaining[39m({
+    [90m 90| [39m        dogId[33m:[39m [34m12[39m[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/actions/__tests__/medical.actions.test.ts[2m > [22mmedical document actions[2m > [22mcleans up uploaded file when an error occurs
+[31m[1mAssertionError[22m: expected "vi.fn()" to be called at least once[39m
+[36m [2m❯[22m lib/actions/__tests__/medical.actions.test.ts:[2m117:26[22m[39m
+    [90m115| [39m    [35mconst[39m result [33m=[39m [35mawait[39m [34muploadMedicalDocument[39m(undefined[33m,[39m formData)
+    [90m116| [39m
+    [90m117| [39m    [34mexpect[39m(createClient)[33m.[39m[34mtoHaveBeenCalled[39m()
+    [90m   | [39m                         [31m^[39m
+    [90m118| [39m    [34mexpect[39m(mockRemove)[33m.[39m[34mtoHaveBeenCalledWith[39m([[32m'7/1234567890-bad.pdf'[39m])
+    [90m119| [39m    [34mexpect[39m(result[33m.[39msuccess)[33m.[39m[34mtoBe[39m([35mfalse[39m)
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/14]⎯[22m[39m
+
+
+[2m  Snapshots [22m [1m[31m1 failed[39m[22m
+[2m Test Files [22m [1m[31m7 failed[39m[22m[2m | [22m[1m[32m38 passed[39m[22m[90m (45)[39m
+[2m      Tests [22m [1m[31m14 failed[39m[22m[2m | [22m[1m[32m452 passed[39m[22m[2m | [22m[33m2 skipped[39m[90m (468)[39m
+[2m   Start at [22m 07:59:58
+[2m   Duration [22m 4.35s[2m (transform 1.21s, setup 3.39s, collect 2.65s, tests 7.95s, environment 11.78s, prepare 206ms)[22m
+
+[1m[41m FAIL [49m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1m[33mu[39m[22m[2m to update snapshot[22m[2m, [22m[2mpress [22m[1mh[22m[2m to show help[22m
+c[3J[1m[44m RERUN [49m[22m [34m[2mrerun all tests [22m[39m
+
+ [31m❯[39m next.config.test.ts [2m([22m[2m10 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[32m 7[2mms[22m[39m
+[31m       [31m×[31m should have expected domains in allowlist[39m[32m 4[2mms[22m[39m
+       [32m✓[39m should only allow HTTPS protocols[32m 0[2mms[22m[39m
+       [32m✓[39m should include required domains[32m 0[2mms[22m[39m
+       [32m✓[39m should have Supabase storage path restriction[32m 0[2mms[22m[39m
+[31m       [31m×[31m should not allow new domains without explicit approval[39m[32m 1[2mms[22m[39m
+       [32m✓[39m should include all hosts from fix-photo-urls.ts output when file exists[32m 0[2mms[22m[39m
+       [32m✓[39m should not contain overly permissive wildcards[32m 0[2mms[22m[39m
+       [32m✓[39m should have minimum cache TTL configured[32m 0[2mms[22m[39m
+       [32m✓[39m should enable modern image formats[32m 0[2mms[22m[39m
+[31m       [31m×[31m should use custom loader[39m[32m 0[2mms[22m[39m
+ [31m❯[39m lib/actions/__tests__/log.actions.test.ts [2m([22m[2m3 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[32m 5[2mms[22m[39m
+[31m     [31m×[31m should return logs for a specific dog ordered by timestamp descending[39m[32m 4[2mms[22m[39m
+[31m     [31m×[31m should return empty array when dog has no logs[39m[32m 1[2mms[22m[39m
+[31m     [31m×[31m should handle different dog IDs[39m[32m 0[2mms[22m[39m
+ [31m❯[39m lib/actions/__tests__/medical.actions.test.ts [2m([22m[2m4 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[32m 6[2mms[22m[39m
+[31m     [31m×[31m uploads a medical document and records metadata[39m[32m 4[2mms[22m[39m
+[31m     [31m×[31m cleans up uploaded file when an error occurs[39m[32m 1[2mms[22m[39m
+     [32m✓[39m lists medical documents for a dog[32m 1[2mms[22m[39m
+     [32m✓[39m deletes a medical document from storage and database[32m 0[2mms[22m[39m
+ [31m❯[39m lib/schemas.test.ts [2m([22m[2m19 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 8[2mms[22m[39m
+       [32m✓[39m validates correct dog form data[32m 2[2mms[22m[39m
+       [32m✓[39m requires name field[32m 1[2mms[22m[39m
+[31m       [31m×[31m validates dateOfBirth as date or null[39m[32m 3[2mms[22m[39m
+       [32m✓[39m allows nullable optional fields[32m 0[2mms[22m[39m
+       [32m✓[39m validates correct log entry data[32m 0[2mms[22m[39m
+       [32m✓[39m requires dogId and logType[32m 0[2mms[22m[39m
+       [32m✓[39m allows null notes[32m 0[2mms[22m[39m
+       [32m✓[39m validates positive integer shift ID[32m 0[2mms[22m[39m
+       [32m✓[39m rejects invalid shift IDs[32m 0[2mms[22m[39m
+       [32m✓[39m validates correct event form data[32m 0[2mms[22m[39m
+       [32m✓[39m requires title, startTime, and endTime[32m 0[2mms[22m[39m
+       [32m✓[39m validates end time is after start time[32m 0[2mms[22m[39m
+       [32m✓[39m validates correct shift data[32m 0[2mms[22m[39m
+       [32m✓[39m requires title, startsAt, endsAt, and capacity[32m 0[2mms[22m[39m
+       [32m✓[39m validates maxVolunteers is at least 1[32m 0[2mms[22m[39m
+       [32m✓[39m validates start time is before end time[32m 0[2mms[22m[39m
+       [32m✓[39m validates correct application data[32m 0[2mms[22m[39m
+       [32m✓[39m requires reason with minimum length[32m 0[2mms[22m[39m
+       [32m✓[39m validates references array[32m 0[2mms[22m[39m
+ [31m❯[39m components/admin/FosterProfileForm.invite.test.tsx [2m([22m[2m6 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 97[2mms[22m[39m
+     [32m✓[39m renders both Save Changes and Save & Invite buttons[32m 15[2mms[22m[39m
+     [32m✓[39m shows correct profile information[32m 3[2mms[22m[39m
+     [32m✓[39m includes intent value in Save & Invite button[32m 2[2mms[22m[39m
+[31m     [31m×[31m renders all form fields with correct values[39m[32m 69[2mms[22m[39m
+     [32m✓[39m shows success message when form submission succeeds[32m 4[2mms[22m[39m
+     [32m✓[39m handles null foster profile gracefully[32m 3[2mms[22m[39m
+ [32m✓[39m app/admin/edit-dog/[id]/DeleteDogButton.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 231[2mms[22m[39m
+ [32m✓[39m lib/hooks/useDogForm.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 204[2mms[22m[39m
+ [32m✓[39m components/update-password-form.test.tsx [2m([22m[2m14 tests[22m[2m)[22m[33m 586[2mms[22m[39m
+ [32m✓[39m app/admin/AdminDashboardClient.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 53[2mms[22m[39m
+ [31m❯[39m components/login-form.test.tsx [2m([22m[2m14 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 934[2mms[22m[39m
+     [32m✓[39m renders login form with all required fields[32m 21[2mms[22m[39m
+     [32m✓[39m updates email input value when user types[32m 83[2mms[22m[39m
+     [32m✓[39m updates password input value when user types[32m 37[2mms[22m[39m
+     [32m✓[39m calls supabase.auth.signInWithPassword with correct arguments on form submission[32m 95[2mms[22m[39m
+     [32m✓[39m displays error message when supabase.auth.signInWithPassword fails[32m 99[2mms[22m[39m
+     [32m✓[39m displays generic error message for unexpected errors[32m 94[2mms[22m[39m
+     [32m✓[39m shows loading state on submit button during form submission[32m 89[2mms[22m[39m
+     [32m✓[39m clears error message when user starts typing again[32m 131[2mms[22m[39m
+     [32m✓[39m has proper accessibility attributes[32m 2[2mms[22m[39m
+     [32m✓[39m has correct links for navigation[32m 2[2mms[22m[39m
+     [32m✓[39m prevents form submission when email is empty[32m 40[2mms[22m[39m
+     [32m✓[39m prevents form submission when password is empty[32m 52[2mms[22m[39m
+[31m     [31m×[31m handles successful login without errors[39m[32m 89[2mms[22m[39m
+     [32m✓[39m resets loading state after error[32m 99[2mms[22m[39m
+ [32m✓[39m components/admin/shifts/__tests__/CreateShiftDialog.int.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 89[2mms[22m[39m
+ [32m✓[39m components/forgot-password-form.test.tsx [2m([22m[2m14 tests[22m[2m)[22m[33m 723[2mms[22m[39m
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould successfully submit an application with valid data
+[22m[39msubmitApplication called with formData keys: [
+  [32m'formType'[39m,
+  [32m'reason'[39m,
+  [32m'address'[39m,
+  [32m'housingType'[39m,
+  [32m'hasYard'[39m,
+  [32m'yardFenced'[39m,
+  [32m'homeEnvironmentDescription'[39m,
+  [32m'references'[39m
+]
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould successfully submit an application with valid data
+[22m[39msubmitApplication: user authenticated, proceeding with submission
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould successfully submit an application with valid data
+[22m[39msubmitApplication: application created successfully with ID: [33m1[39m
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould return validation errors for invalid data
+[22m[39msubmitApplication called with formData keys: [ [32m'formType'[39m, [32m'reason'[39m ]
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould return validation errors for invalid data
+[22m[39msubmitApplication: user authenticated, proceeding with submission
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould return error when user is not authenticated
+[22m[39msubmitApplication called with formData keys: []
+
+[90mstdout[2m | lib/actions/__tests__/application.actions.test.ts[2m > [22m[2msubmitApplication[2m > [22m[2mshould return error when user is not authenticated
+[22m[39msubmitApplication: user not authenticated
+
+ [32m✓[39m lib/actions/__tests__/application.actions.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m components/volunteer/__tests__/ShiftList.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 40[2mms[22m[39m
+ [32m✓[39m components/admin/__tests__/MedicalRecordTable.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m lib/__tests__/utils.test.ts [2m([22m[2m35 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m components/admin/applications/__tests__/ReferencesSection.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+ [32m✓[39m components/sign-up-form.test.tsx [2m([22m[2m16 tests[22m[2m)[22m[33m 1210[2mms[22m[39m
+ [32m✓[39m components/ui/form-error.a11y.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+[90mstderr[2m | lib/hooks/useBulkApplicationActions.test.ts[2m > [22m[2museBulkApplicationActions[2m > [22m[2mhandles selection and deselection
+[22m[39mAn update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | lib/hooks/useBulkApplicationActions.test.ts[2m > [22m[2museBulkApplicationActions[2m > [22m[2mhandles select all and clear all
+[22m[39mAn update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | lib/hooks/useBulkApplicationActions.test.ts[2m > [22m[2museBulkApplicationActions[2m > [22m[2mcalculates indeterminate and allSelected correctly
+[22m[39mAn update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | lib/hooks/useBulkApplicationActions.test.ts[2m > [22m[2museBulkApplicationActions[2m > [22m[2mfetches staff users only when an item is selected
+[22m[39mAn update to TestComponent inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32m✓[39m lib/hooks/useBulkApplicationActions.test.ts [2m([22m[2m10 tests[22m[2m | [22m[33m2 skipped[39m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m components/admin/applications/__tests__/ApplicantInformation.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/shift-signup.actions.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/dog.actions.test.ts [2m([22m[2m32 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m components/admin/applications/__tests__/HomeEnvironment.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m lib/hooks/useApplicationsFilters.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m components/admin/applications/__tests__/VetInformation.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+{"level":30,"time":1762186254115,"service":"senior-dog-rescue","hostname":"unknown","requestId":"c7428d08-86ec-4aa0-9c4d-8859204c1b62","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":30,"time":1762186254116,"service":"senior-dog-rescue","hostname":"unknown","requestId":"c7428d08-86ec-4aa0-9c4d-8859204c1b62","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userId":null,"hasClaims":false,"msg":"Resolved user context"}
+{"level":30,"time":1762186254116,"service":"senior-dog-rescue","hostname":"unknown","metric":"auth.redirects","route":"/admin","reason":"no_session","value":1,"msg":"Authentication redirect"}
+{"level":40,"time":1762186254116,"service":"senior-dog-rescue","hostname":"unknown","requestId":"c7428d08-86ec-4aa0-9c4d-8859204c1b62","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userId":null,"userRole":null,"msg":"Access denied → redirecting to login"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"b5332aa7-021b-4a15-b3eb-931cacfd9460","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"b5332aa7-021b-4a15-b3eb-931cacfd9460","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","userId":"user-1","hasClaims":true,"msg":"Resolved user context"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"b5332aa7-021b-4a15-b3eb-931cacfd9460","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","hasAccess":true,"msg":"Access check result"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"b5332aa7-021b-4a15-b3eb-931cacfd9460","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","msg":"Allowing request to continue"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"0d6a3f0b-3601-4802-92ca-4ef48c8a0d8a","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"0d6a3f0b-3601-4802-92ca-4ef48c8a0d8a","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"VOLUNTEER","userId":"user-2","hasClaims":true,"msg":"Resolved user context"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"0d6a3f0b-3601-4802-92ca-4ef48c8a0d8a","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"VOLUNTEER","hasAccess":false,"msg":"Access check result"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","metric":"auth.redirects","route":"/admin","reason":"insufficient_role","userRole":"VOLUNTEER","value":1,"msg":"Authentication redirect"}
+{"level":40,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"0d6a3f0b-3601-4802-92ca-4ef48c8a0d8a","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userId":"user-2","userRole":"VOLUNTEER","msg":"Access denied → redirecting to login"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"763ba5cc-900b-410a-b531-75b92993d1de","route":"/api/test-api/reset","pathname":"/api/test-api/reset","method":"GET","cookies":[{"name":"test_role","value":"VOLUNTEER"},{"name":"test_user_id","value":"test-user"}],"msg":"Incoming request"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"763ba5cc-900b-410a-b531-75b92993d1de","route":"/api/test-api/reset","pathname":"/api/test-api/reset","requiredRole":"VOLUNTEER","userRole":"VOLUNTEER","userId":"test-user","hasClaims":true,"msg":"Resolved user context"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"763ba5cc-900b-410a-b531-75b92993d1de","route":"/api/test-api/reset","pathname":"/api/test-api/reset","requiredRole":"VOLUNTEER","userRole":"VOLUNTEER","hasAccess":true,"msg":"Access check result"}
+{"level":30,"time":1762186254117,"service":"senior-dog-rescue","hostname":"unknown","requestId":"763ba5cc-900b-410a-b531-75b92993d1de","route":"/api/test-api/reset","pathname":"/api/test-api/reset","requiredRole":"VOLUNTEER","userRole":"VOLUNTEER","msg":"Allowing request to continue"}
+{"level":30,"time":1762186254118,"service":"senior-dog-rescue","hostname":"unknown","requestId":"85d813bb-0883-471b-93ba-f5019e0b39eb","route":"/api/dogs","pathname":"/api/dogs","method":"GET","cookies":[{"name":"test_role","value":"STAFF"},{"name":"test_user_id","value":"test-user"}],"msg":"Incoming request"}
+{"level":30,"time":1762186254118,"service":"senior-dog-rescue","hostname":"unknown","requestId":"85d813bb-0883-471b-93ba-f5019e0b39eb","route":"/api/dogs","pathname":"/api/dogs","requiredRole":"STAFF","userRole":"STAFF","userId":"test-user","hasClaims":true,"msg":"Resolved user context"}
+{"level":30,"time":1762186254118,"service":"senior-dog-rescue","hostname":"unknown","requestId":"85d813bb-0883-471b-93ba-f5019e0b39eb","route":"/api/dogs","pathname":"/api/dogs","requiredRole":"STAFF","userRole":"STAFF","hasAccess":true,"msg":"Access check result"}
+{"level":30,"time":1762186254118,"service":"senior-dog-rescue","hostname":"unknown","requestId":"85d813bb-0883-471b-93ba-f5019e0b39eb","route":"/api/dogs","pathname":"/api/dogs","requiredRole":"STAFF","userRole":"STAFF","msg":"Allowing request to continue"}
+{"level":30,"time":1762186254118,"service":"senior-dog-rescue","hostname":"unknown","requestId":"fcb0688c-eed5-4216-937f-0093a95408c6","route":"/api/dogs","pathname":"/api/dogs","method":"GET","cookies":[{"name":"test_role","value":"STAFF"},{"name":"test_user_id","value":"test-user"}],"msg":"Incoming request"}
+{"level":30,"time":1762186254119,"service":"senior-dog-rescue","hostname":"unknown","requestId":"9b02911e-4a70-434e-9f5b-018a47b600de","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":50,"time":1762186254119,"service":"senior-dog-rescue","hostname":"unknown","requestId":"9b02911e-4a70-434e-9f5b-018a47b600de","route":"/admin","pathname":"/admin","nodeEnv":"production","msg":"Fail-closed triggered: missing required env vars"}
+{"level":30,"time":1762186254119,"service":"senior-dog-rescue","hostname":"unknown","requestId":"74227c29-470a-44f2-bb15-df175eabe197","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":30,"time":1762186254119,"service":"senior-dog-rescue","hostname":"unknown","requestId":"74227c29-470a-44f2-bb15-df175eabe197","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","userId":"user-1","hasClaims":true,"msg":"Resolved user context"}
+{"level":30,"time":1762186254119,"service":"senior-dog-rescue","hostname":"unknown","requestId":"74227c29-470a-44f2-bb15-df175eabe197","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","hasAccess":true,"msg":"Access check result"}
+{"level":30,"time":1762186254119,"service":"senior-dog-rescue","hostname":"unknown","requestId":"74227c29-470a-44f2-bb15-df175eabe197","route":"/admin","pathname":"/admin","requiredRole":"STAFF","userRole":"ADMIN","msg":"Allowing request to continue"}
+{"level":30,"time":1762186254119,"service":"senior-dog-rescue","hostname":"unknown","requestId":"38ac5b8d-8e2b-4214-93fa-3b88046240c3","route":"/admin","pathname":"/admin","method":"GET","cookies":[],"msg":"Incoming request"}
+{"level":50,"time":1762186254119,"service":"senior-dog-rescue","hostname":"unknown","requestId":"38ac5b8d-8e2b-4214-93fa-3b88046240c3","route":"/admin","pathname":"/admin","nodeEnv":"production","msg":"Fail-closed triggered: missing required env vars"}
+ [32m✓[39m middleware.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/shift.actions.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/event.actions.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/validation.schemas.test.ts [2m([22m[2m35 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m lib/zod/__tests__/applicationSchema.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/foster.actions.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m lib/zod/__tests__/shift.schema.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m lib/actions/application.actions.bulk.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+[90mstderr[2m | lib/rate-limiter.test.ts[2m > [22m[2mRate Limiter[2m > [22m[2mcreateRateLimiter[2m > [22m[2mshould fallback to MemoryRateLimiter in production without Redis env vars
+[22m[39mRedis environment variables not found, falling back to memory rate limiter
+
+ [32m✓[39m lib/rate-limiter.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m lib/actions/foster.actions.csv.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+{"level":40,"time":1762186254717,"service":"senior-dog-rescue","hostname":"unknown","metric":"unknown_image_host_rejections","host":"evil-domain.com","route":"image-loader","value":1,"msg":"Unknown image host rejected"}
+{"level":40,"time":1762186254718,"service":"senior-dog-rescue","hostname":"unknown","metric":"unknown_image_host_rejections","host":"another-evil.com","route":"image-loader","value":1,"msg":"Unknown image host rejected"}
+{"level":40,"time":1762186254718,"service":"senior-dog-rescue","hostname":"unknown","metric":"unknown_image_host_rejections","host":"127.0.0.1","route":"image-loader","value":1,"msg":"Unknown image host rejected"}
+ [32m✓[39m lib/__tests__/image-loader.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+[90mstdout[2m | lib/actions/notifications.actions.test.ts[2m > [22m[2msendFosterInvite[2m > [22m[2msuccessfully sends invitation (stub implementation)
+[22m[39mFoster invite sent { profileId: [32m'profile-123'[39m }
+
+ [32m✓[39m lib/actions/notifications.actions.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/user.actions.simple.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m lib/actions/__tests__/user.actions.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m lib/security-headers.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m scripts/__tests__/enrich-dogs.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m lib/csv.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+ [32m✓[39m __tests__/middleware.headers.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 1[2mms[22m[39m
+ [31m❯[39m components/admin/MedicalDocumentManager.progress.test.tsx [2m([22m[2m3 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[33m 3081[2mms[22m[39m
+[31m     [31m×[31m shows progress bar during upload[39m[33m 1035[2mms[22m[39m
+[31m     [31m×[31m updates progress percentage and clears at 100%[39m[33m 1005[2mms[22m[39m
+[31m     [31m×[31m shows retry button on upload failure[39m[33m 1041[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 14 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m next.config.test.ts[2m > [22mNext.js Image Configuration[2m > [22mremotePatterns allowlist[2m > [22mshould have expected domains in allowlist
+[31m[1mError[22m: Snapshot `Next.js Image Configuration > remotePatterns allowlist > should have expected domains in allowlist 1` mismatched[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[2m    "assets.adoptapet.com",[22m
+[2m    "dl5zpyw5k3jeb.cloudfront.net",[22m
+[32m-   "external.xx.fbcdn.net",[39m
+[2m    "localhost",[22m
+[2m    "muttville.org",[22m
+[2m    "picsum.photos",[22m
+[32m-   "scontent.xx.fbcdn.net",[39m
+[2m    "via.placeholder.com",[22m
+[2m  ][22m
+
+[36m [2m❯[22m next.config.test.ts:[2m20:25[22m[39m
+    [90m 18| [39m      const hostnames = remotePatterns.map(pattern => pattern.hostname…
+    [90m 19| [39m
+    [90m 20| [39m      [34mexpect[39m(hostnames)[33m.[39m[34mtoMatchSnapshot[39m()[33m;[39m
+    [90m   | [39m                        [31m^[39m
+    [90m 21| [39m    })[33m;[39m
+    [90m 22| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m next.config.test.ts[2m > [22mNext.js Image Configuration[2m > [22mremotePatterns allowlist[2m > [22mshould not allow new domains without explicit approval
+[31m[1mAssertionError[22m: expected [ 'via.placeholder.com', …(5) ] to include 'scontent.xx.fbcdn.net'[39m
+[36m [2m❯[22m next.config.test.ts:[2m79:27[22m[39m
+    [90m 77| [39m      [90m// All approved domains should be present[39m
+    [90m 78| [39m      approvedDomains[33m.[39m[34mforEach[39m(domain [33m=>[39m {
+    [90m 79| [39m        [34mexpect[39m(hostnames)[33m.[39m[34mtoContain[39m(domain)[33m;[39m
+    [90m   | [39m                          [31m^[39m
+    [90m 80| [39m      })[33m;[39m
+    [90m 81| [39m    })[33m;[39m
+[90m [2m❯[22m next.config.test.ts:[2m78:23[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m next.config.test.ts[2m > [22mNext.js Image Configuration[2m > [22mimage optimization settings[2m > [22mshould use custom loader
+[31m[1mAssertionError[22m: expected undefined to be './lib/image-loader.ts' // Object.is equality[39m
+
+[32m- Expected:[39m 
+"./lib/image-loader.ts"
+
+[31m+ Received:[39m 
+undefined
+
+[36m [2m❯[22m next.config.test.ts:[2m134:41[22m[39m
+    [90m132| [39m
+    [90m133| [39m    [34mit[39m([32m'should use custom loader'[39m[33m,[39m () [33m=>[39m {
+    [90m134| [39m      [34mexpect[39m(config[33m.[39mimages[33m?.[39mloaderFile)[33m.[39m[34mtoBe[39m([32m'./lib/image-loader.ts'[39m)[33m;[39m
+    [90m   | [39m                                        [31m^[39m
+    [90m135| [39m    })[33m;[39m
+    [90m136| [39m  })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/schemas.test.ts[2m > [22mSchemas[2m > [22mdogFormSchema[2m > [22mvalidates dateOfBirth as date or null
+[31m[1mAssertionError[22m: expected true to be false // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- false[39m
+[31m+ true[39m
+
+[36m [2m❯[22m lib/schemas.test.ts:[2m56:31[22m[39m
+    [90m 54| [39m      const invalidData = { name: 'Buddy', dateOfBirth: 'invalid-date'…
+    [90m 55| [39m      [35mconst[39m result2 [33m=[39m dogFormSchema[33m.[39m[34msafeParse[39m(invalidData)[33m;[39m
+    [90m 56| [39m      [34mexpect[39m(result2[33m.[39msuccess)[33m.[39m[34mtoBe[39m([35mfalse[39m)[33m;[39m
+    [90m   | [39m                              [31m^[39m
+    [90m 57| [39m    })[33m;[39m
+    [90m 58| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m components/login-form.test.tsx[2m > [22mLoginForm[2m > [22mhandles successful login without errors
+[31m[1mError[22m: [2mexpect([22m[31melement[31m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <p
+  class="text-sm text-red-500"
+  data-testid="message-error"
+>
+  supabase.auth.getUser is not a function
+</p> instead[31m[39m
+[36m [2m❯[22m components/login-form.test.tsx:[2m265:55[22m[39m
+    [90m263| [39m    
+    [90m264| [39m    [90m// Should not show error message[39m
+    [90m265| [39m    expect(screen.queryByTestId('message-error')).not.toBeInTheDocumen…
+    [90m   | [39m                                                      [31m^[39m
+    [90m266| [39m  })
+    [90m267| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m components/admin/FosterProfileForm.invite.test.tsx[2m > [22mFosterProfileForm - Save & Invite[2m > [22mrenders all form fields with correct values
+[31m[1mError[22m: [2mexpect([22m[31melement[31m[2m).toBeChecked()[22m
+
+Received element is not checked:
+  [31m<input
+  id="hasCats"
+  name="hasCats"
+  type="checkbox"
+/>[31m[39m
+[36m [2m❯[22m components/admin/FosterProfileForm.invite.test.tsx:[2m188:29[22m[39m
+    [90m186| [39m    const notesTextarea = screen.getByPlaceholderText("Add internal no…
+    [90m187| [39m
+    [90m188| [39m    [34mexpect[39m(comfortCheckbox)[33m.[39m[34mtoBeChecked[39m()[33m;[39m
+    [90m   | [39m                            [31m^[39m
+    [90m189| [39m    [34mexpect[39m(dogsCheckbox)[33m.[39mnot[33m.[39m[34mtoBeChecked[39m()[33m;[39m
+    [90m190| [39m    [34mexpect[39m(medsCheckbox)[33m.[39m[34mtoBeChecked[39m()[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m components/admin/MedicalDocumentManager.progress.test.tsx[2m > [22mMedicalDocumentManager - Upload Progress[2m > [22mshows progress bar during upload
+[31m[1mError[22m[39m: [2mexpect([22m[31melement[39m[2m).not.toBeDisabled()[22m
+
+Received element is disabled:
+  [31m<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"
+  data-slot="button"
+  data-testid="start-upload"
+  disabled=""
+  type="button"
+/>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"space-y-6"[39m
+      [36m>[39m
+        [36m<div>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"text-2xl font-bold mb-4"[39m
+          [36m>[39m
+            [0mMedical Documents[0m
+          [36m</h2>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-sm text-muted-foreground"[39m
+          [36m>[39m
+            [0mUpload vet reports, X-rays, and supporting documents for this dog.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"grid gap-3 rounded-md border border-border p-4"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"grid gap-2"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"[39m
+              [33mdata-slot[39m=[32m"label"[39m
+              [33mfor[39m=[32m"medicalDocument"[39m
+            [36m>[39m
+              [0mMedical document[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maccept[39m=[32m"application/pdf,image/*"[39m
+              [33maria-label[39m=[32m"Upload medical document"[39m
+              [33mclass[39m=[32m"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"[39m
+              [33mid[39m=[32m"medicalDocument"[39m
+              [33mname[39m=[32m"file"[39m
+              [33mtype[39m=[32m"file"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex justify-end gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mdata-testid[39m=[32m"start-upload"[39m
+              [33mdisabled[39m=[32m""[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mUpload[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"space-y-3"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"text-xl font-semibold"[39m
+          [36m>[39m
+            [0mUploaded documents[0m
+          [36m</h3>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"space-y-3"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex flex-col gap-2 rounded-md border border-border p-4 md:flex-row md:items-center md:justify-between"[39m
+            [36m>[39m
+              [36m<div>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"font-medium text-primary hover:underline"[39m
+                  [33mhref[39m=[32m"https://example.com/test.pdf"[39m
+                  [33mrel[39m=[32m"noopener noreferrer"[39m
+                  [33mtarget[39m=[32m"_blank"[39m
+                [36m>[39m
+                  [0mtest.pdf[0m
+                [36m</a>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+                [36m>[39m
+                  [0mUploaded [0m
+                  [36m<span>[39m
+                    [0m11/3/2025[0m
+                  [36m</span>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mDelete[0m
+              [36m</button>[39m
+            [36m</li>[39m
+          [36m</ul>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[36m [2m❯[22m components/admin/MedicalDocumentManager.progress.test.tsx:[2m32:44[22m[39m
+    [90m 30| [39m
+    [90m 31| [39m    [35mconst[39m button [33m=[39m screen[33m.[39m[34mgetByTestId[39m([32m"start-upload"[39m)[33m;[39m
+    [90m 32| [39m    [35mawait[39m [34mwaitFor[39m(() [33m=>[39m [34mexpect[39m(button)[33m.[39mnot[33m.[39m[34mtoBeDisabled[39m())[33m;[39m
+    [90m   | [39m                                           [31m^[39m
+    [90m 33| [39m
+    [90m 34| [39m    [35mawait[39m user[33m.[39m[34mclick[39m(button)[33m;[39m
+[90m [2m❯[22m runWithExpensiveErrorDiagnosticsDisabled node_modules/@testing-library/dom/dist/config.js:[2m47:12[22m[39m
+[90m [2m❯[22m checkCallback node_modules/@testing-library/dom/dist/wait-for.js:[2m124:77[22m[39m
+[90m [2m❯[22m Timeout.checkRealTimersCallback node_modules/@testing-library/dom/dist/wait-for.js:[2m118:16[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m components/admin/MedicalDocumentManager.progress.test.tsx[2m > [22mMedicalDocumentManager - Upload Progress[2m > [22mupdates progress percentage and clears at 100%
+[31m[1mError[22m[39m: [2mexpect([22m[31melement[39m[2m).not.toBeDisabled()[22m
+
+Received element is disabled:
+  [31m<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"
+  data-slot="button"
+  data-testid="start-upload"
+  disabled=""
+  type="button"
+/>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"space-y-6"[39m
+      [36m>[39m
+        [36m<div>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"text-2xl font-bold mb-4"[39m
+          [36m>[39m
+            [0mMedical Documents[0m
+          [36m</h2>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-sm text-muted-foreground"[39m
+          [36m>[39m
+            [0mUpload vet reports, X-rays, and supporting documents for this dog.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"grid gap-3 rounded-md border border-border p-4"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"grid gap-2"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"[39m
+              [33mdata-slot[39m=[32m"label"[39m
+              [33mfor[39m=[32m"medicalDocument"[39m
+            [36m>[39m
+              [0mMedical document[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maccept[39m=[32m"application/pdf,image/*"[39m
+              [33maria-label[39m=[32m"Upload medical document"[39m
+              [33mclass[39m=[32m"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"[39m
+              [33mid[39m=[32m"medicalDocument"[39m
+              [33mname[39m=[32m"file"[39m
+              [33mtype[39m=[32m"file"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex justify-end gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mdata-testid[39m=[32m"start-upload"[39m
+              [33mdisabled[39m=[32m""[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mUpload[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"space-y-3"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"text-xl font-semibold"[39m
+          [36m>[39m
+            [0mUploaded documents[0m
+          [36m</h3>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"space-y-3"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex flex-col gap-2 rounded-md border border-border p-4 md:flex-row md:items-center md:justify-between"[39m
+            [36m>[39m
+              [36m<div>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"font-medium text-primary hover:underline"[39m
+                  [33mhref[39m=[32m"https://example.com/test.pdf"[39m
+                  [33mrel[39m=[32m"noopener noreferrer"[39m
+                  [33mtarget[39m=[32m"_blank"[39m
+                [36m>[39m
+                  [0mtest.pdf[0m
+                [36m</a>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+                [36m>[39m
+                  [0mUploaded [0m
+                  [36m<span>[39m
+                    [0m11/3/2025[0m
+                  [36m</span>[39m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mDelete[0m
+              [36m</button>[39m
+            [36m</li>[39m
+          [36m</ul>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[36m [2m❯[22m components/admin/MedicalDocumentManager.progress.test.tsx:[2m47:44[22m[39m
+    [90m 45| [39m
+    [90m 46| [39m    [35mconst[39m button [33m=[39m screen[33m.[39m[34mgetByTestId[39m([32m"start-upload"[39m)[33m;[39m
+    [90m 47| [39m    [35mawait[39m [34mwaitFor[39m(() [33m=>[39m [34mexpect[39m(button)[33m.[39mnot[33m.[39m[34mtoBeDisabled[39m())[33m;[39m
+    [90m   | [39m                                           [31m^[39m
+    [90m 48| [39m
+    [90m 49| [39m    [35mawait[39m user[33m.[39m[34mclick[39m(button)[33m;[39m
+[90m [2m❯[22m runWithExpensiveErrorDiagnosticsDisabled node_modules/@testing-library/dom/dist/config.js:[2m47:12[22m[39m
+[90m [2m❯[22m checkCallback node_modules/@testing-library/dom/dist/wait-for.js:[2m124:77[22m[39m
+[90m [2m❯[22m Timeout.checkRealTimersCallback node_modules/@testing-library/dom/dist/wait-for.js:[2m118:16[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m components/admin/MedicalDocumentManager.progress.test.tsx[2m > [22mMedicalDocumentManager - Upload Progress[2m > [22mshows retry button on upload failure
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element by: [data-testid="upload-error"]
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"space-y-6"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-2xl font-bold mb-4"[39m
+        [36m>[39m
+          [0mMedical Documents[0m
+        [36m</h2>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0mUpload vet reports, X-rays, and supporting documents for this dog.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"grid gap-3 rounded-md border border-border p-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"grid gap-2"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"[39m
+            [33mdata-slot[39m=[32m"label"[39m
+            [33mfor[39m=[32m"medicalDocument"[39m
+          [36m>[39m
+            [0mMedical document[0m
+          [36m</label>[39m
+          [36m<input[39m
+            [33maccept[39m=[32m"application/pdf,image/*"[39m
+            [33maria-label[39m=[32m"Upload medical document"[39m
+            [33mclass[39m=[32m"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"[39m
+            [33mid[39m=[32m"medicalDocument"[39m
+            [33mname[39m=[32m"file"[39m
+            [33mtype[39m=[32m"file"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex justify-end gap-2"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mdata-testid[39m=[32m"start-upload"[39m
+            [33mdisabled[39m=[32m""[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mUpload[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"space-y-3"[39m
+      [36m>[39m
+        [36m<h3[39m
+          [33mclass[39m=[32m"text-xl font-semibold"[39m
+        [36m>[39m
+          [0mUploaded documents[0m
+        [36m</h3>[39m
+        [36m<ul[39m
+          [33mclass[39m=[32m"space-y-3"[39m
+        [36m>[39m
+          [36m<li[39m
+            [33mclass[39m=[32m"flex flex-col gap-2 rounded-md border border-border p-4 md:flex-row md:items-center md:justify-between"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-medium text-primary hover:underline"[39m
+                [33mhref[39m=[32m"https://example.com/test.pdf"[39m
+                [33mrel[39m=[32m"noopener noreferrer"[39m
+                [33mtarget[39m=[32m"_blank"[39m
+              [36m>[39m
+                [0mtest.pdf[0m
+              [36m</a>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+              [36m>[39m
+                [0mUploaded [0m
+                [36m<span>[39m
+                  [0m11/3/2025[0m
+                [36m</span>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mDelete[0m
+            [36m</button>[39m
+          [36m</li>[39m
+        [36m</ul>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"space-y-6"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-2xl font-bold mb-4"[39m
+        [36m>[39m
+          [0mMedical Documents[0m
+        [36m</h2>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0mUpload vet reports, X-rays, and supporting documents for this dog.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"grid gap-3 rounded-md border border-border p-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"grid gap-2"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"[39m
+            [33mdata-slot[39m=[32m"label"[39m
+            [33mfor[39m=[32m"medicalDocument"[39m
+          [36m>[39m
+            [0mMedical document[0m
+          [36m</label>[39m
+          [36m<input[39m
+            [33maccept[39m=[32m"application/pdf,image/*"[39m
+            [33maria-label[39m=[32m"Upload medical document"[39m
+            [33mclass[39m=[32m"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"[39m
+            [33mid[39m=[32m"medicalDocument"[39m
+            [33mname[39m=[32m"file"[39m
+            [33mtype[39m=[32m"file"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex justify-end gap-2"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mdata-testid[39m=[32m"start-upload"[39m
+            [33mdisabled[39m=[32m""[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mUpload[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"space-y-3"[39m
+      [36m>[39m
+        [36m<h3[39m
+          [33mclass[39m=[32m"text-xl font-semibold"[39m
+        [36m>[39m
+          [0mUploaded documents[0m
+        [36m</h3>[39m
+        [36m<ul[39m
+          [33mclass[39m=[32m"space-y-3"[39m
+        [36m>[39m
+          [36m<li[39m
+            [33mclass[39m=[32m"flex flex-col gap-2 rounded-md border border-border p-4 md:flex-row md:items-center md:justify-between"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"font-medium text-primary hover:underline"[39m
+                [33mhref[39m=[32m"https://example.com/test.pdf"[39m
+                [33mrel[39m=[32m"noopener noreferrer"[39m
+                [33mtarget[39m=[32m"_blank"[39m
+              [36m>[39m
+                [0mtest.pdf[0m
+              [36m</a>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+              [36m>[39m
+                [0mUploaded [0m
+                [36m<span>[39m
+                  [0m11/3/2025[0m
+                [36m</span>[39m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mDelete[0m
+            [36m</button>[39m
+          [36m</li>[39m
+        [36m</ul>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m86:33[22m[39m
+[36m [2m❯[22m components/admin/MedicalDocumentManager.progress.test.tsx:[2m68:25[22m[39m
+    [90m 66| [39m    [35mawait[39m user[33m.[39m[34mclick[39m(screen[33m.[39m[34mgetByTestId[39m([32m"start-upload"[39m))[33m;[39m
+    [90m 67| [39m
+    [90m 68| [39m    expect(await screen.findByTestId("upload-error")).toBeInTheDocumen…
+    [90m   | [39m                        [31m^[39m
+    [90m 69| [39m    [34mexpect[39m(screen[33m.[39m[34mgetByTestId[39m([32m"retry-upload"[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m 70| [39m  })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/actions/__tests__/log.actions.test.ts[2m > [22mgetActivityLogs[2m > [22mshould return logs for a specific dog ordered by timestamp descending
+[31m[1mAssertionError[22m: expected undefined to deeply equal [ { id: 1, …(6) }, { id: 2, …(6) } ][39m
+
+[32m- Expected:[39m 
+[
+  {
+    "createdAt": 2024-01-02T10:00:00.000Z,
+    "createdByUser": {
+      "id": "user-1",
+      "name": "John Doe",
+    },
+    "createdByUserId": "user-1",
+    "dogId": 1,
+    "id": 1,
+    "note": "Good walk",
+    "type": "NOTE",
+  },
+  {
+    "createdAt": 2024-01-01T09:00:00.000Z,
+    "createdByUser": {
+      "id": "user-2",
+      "name": "Jane Smith",
+    },
+    "createdByUserId": "user-2",
+    "dogId": 1,
+    "id": 2,
+    "note": "Fed breakfast",
+    "type": "CALL",
+  },
+]
+
+[31m+ Received:[39m 
+undefined
+
+[36m [2m❯[22m lib/actions/__tests__/log.actions.test.ts:[2m69:20[22m[39m
+    [90m 67| [39m
+    [90m 68| [39m    [90m// Assert[39m
+    [90m 69| [39m    [34mexpect[39m(result)[33m.[39m[34mtoEqual[39m(mockLogs)
+    [90m   | [39m                   [31m^[39m
+    [90m 70| [39m    [34mexpect[39m(prisma[33m.[39mactivityLog[33m.[39mfindMany)[33m.[39m[34mtoHaveBeenCalledWith[39m({
+    [90m 71| [39m      where[33m:[39m { dogId }[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/actions/__tests__/log.actions.test.ts[2m > [22mgetActivityLogs[2m > [22mshould return empty array when dog has no logs
+[31m[1mAssertionError[22m: expected undefined to deeply equal [][39m
+
+[32m- Expected:[39m 
+[]
+
+[31m+ Received:[39m 
+undefined
+
+[36m [2m❯[22m lib/actions/__tests__/log.actions.test.ts:[2m93:20[22m[39m
+    [90m 91| [39m
+    [90m 92| [39m    [90m// Assert[39m
+    [90m 93| [39m    [34mexpect[39m(result)[33m.[39m[34mtoEqual[39m([])
+    [90m   | [39m                   [31m^[39m
+    [90m 94| [39m  })
+    [90m 95| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/actions/__tests__/log.actions.test.ts[2m > [22mgetActivityLogs[2m > [22mshould handle different dog IDs
+[31m[1mAssertionError[22m: expected undefined to deeply equal [ { id: 3, …(6) } ][39m
+
+[32m- Expected:[39m 
+[
+  {
+    "createdAt": 2024-01-01T10:00:00.000Z,
+    "createdByUser": {
+      "id": "user-3",
+      "name": "Bob Wilson",
+    },
+    "createdByUserId": "user-3",
+    "dogId": 42,
+    "id": 3,
+    "note": "Outdoor break",
+    "type": "VISIT",
+  },
+]
+
+[31m+ Received:[39m 
+undefined
+
+[36m [2m❯[22m lib/actions/__tests__/log.actions.test.ts:[2m120:20[22m[39m
+    [90m118| [39m
+    [90m119| [39m    [90m// Assert[39m
+    [90m120| [39m    [34mexpect[39m(result)[33m.[39m[34mtoEqual[39m(mockLogs)
+    [90m   | [39m                   [31m^[39m
+    [90m121| [39m    [34mexpect[39m(prisma[33m.[39mactivityLog[33m.[39mfindMany)[33m.[39m[34mtoHaveBeenCalledWith[39m({
+    [90m122| [39m      where[33m:[39m { dogId[33m:[39m [34m42[39m }[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/actions/__tests__/medical.actions.test.ts[2m > [22mmedical document actions[2m > [22muploads a medical document and records metadata
+[31m[1mAssertionError[22m: expected "vi.fn()" to be called with arguments: [ { data: ObjectContaining{…} } ][90m
+
+Number of calls: [1m0[22m
+[31m[39m
+[36m [2m❯[22m lib/actions/__tests__/medical.actions.test.ts:[2m88:43[22m[39m
+    [90m 86| [39m    [34mexpect[39m(createClient)[33m.[39mnot[33m.[39m[34mtoHaveBeenCalled[39m()
+    [90m 87| [39m
+    [90m 88| [39m    [34mexpect[39m(prisma[33m.[39mmedicalDocument[33m.[39mcreate)[33m.[39m[34mtoHaveBeenCalledWith[39m({
+    [90m   | [39m                                          [31m^[39m
+    [90m 89| [39m      data[33m:[39m expect[33m.[39m[34mobjectContaining[39m({
+    [90m 90| [39m        dogId[33m:[39m [34m12[39m[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/14]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m lib/actions/__tests__/medical.actions.test.ts[2m > [22mmedical document actions[2m > [22mcleans up uploaded file when an error occurs
+[31m[1mAssertionError[22m: expected "vi.fn()" to be called at least once[39m
+[36m [2m❯[22m lib/actions/__tests__/medical.actions.test.ts:[2m117:26[22m[39m
+    [90m115| [39m    [35mconst[39m result [33m=[39m [35mawait[39m [34muploadMedicalDocument[39m(undefined[33m,[39m formData)
+    [90m116| [39m
+    [90m117| [39m    [34mexpect[39m(createClient)[33m.[39m[34mtoHaveBeenCalled[39m()
+    [90m   | [39m                         [31m^[39m
+    [90m118| [39m    [34mexpect[39m(mockRemove)[33m.[39m[34mtoHaveBeenCalledWith[39m([[32m'7/1234567890-bad.pdf'[39m])
+    [90m119| [39m    [34mexpect[39m(result[33m.[39msuccess)[33m.[39m[34mtoBe[39m([35mfalse[39m)
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/14]⎯[22m[39m
+
+
+[2m  Snapshots [22m [1m[31m1 failed[39m[22m
+[2m Test Files [22m [1m[31m7 failed[39m[22m[2m | [22m[1m[32m38 passed[39m[22m[90m (45)[39m
+[2m      Tests [22m [1m[31m14 failed[39m[22m[2m | [22m[1m[32m452 passed[39m[22m[2m | [22m[33m2 skipped[39m[90m (468)[39m
+[2m   Start at [22m 08:10:51
+[2m   Duration [22m 11.88s
+
+[1m[41m FAIL [49m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1m[33mu[39m[22m[2m to update snapshot[22m[2m, [22m[2mpress [22m[1mh[22m[2m to show help[22m
+[31mCancelling test run. Press CTRL+c again to exit forcefully.
+[39m

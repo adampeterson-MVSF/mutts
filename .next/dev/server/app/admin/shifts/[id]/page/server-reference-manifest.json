@@ -1,0 +1,320 @@
+{
+  "node": {
+    "000856392be4f7d53ed3e3e3326c2c888c8e2950e9": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getSSRUser",
+          "filename": "lib/auth/session.server.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getSSRUser",
+      "filename": "lib/auth/session.server.ts"
+    },
+    "000aeb79ba6f33d73422168fb389b5645da89d7d7b": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getDeletedShifts",
+          "filename": "lib/actions/shift.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getDeletedShifts",
+      "filename": "lib/actions/shift.actions.ts"
+    },
+    "006365352aae1d16a2339b30c5dd5514ab5b8bb410": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAllShiftsWithSignups",
+          "filename": "lib/actions/shift.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getAllShiftsWithSignups",
+      "filename": "lib/actions/shift.actions.ts"
+    },
+    "40714bd1d212cb2c2e54a5bfd4d967045b3e109d62": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "bulkCancelShifts",
+          "filename": "lib/actions/shift.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "bulkCancelShifts",
+      "filename": "lib/actions/shift.actions.ts"
+    },
+    "40c33e5f9a6e4cd43aade3f0d1cc8364f74a85ca86": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getShiftWithSignups",
+          "filename": "lib/actions/shift.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getShiftWithSignups",
+      "filename": "lib/actions/shift.actions.ts"
+    },
+    "40d2ce6ee3c704fdf4382853c41a2bddd342c9b6b4": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getShiftAffectedCount",
+          "filename": "lib/actions/shift.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getShiftAffectedCount",
+      "filename": "lib/actions/shift.actions.ts"
+    },
+    "40f16dbda41accf87ddaf0f20c65067fa6b3e52ce9": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getMyShifts",
+          "filename": "lib/actions/shift.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getMyShifts",
+      "filename": "lib/actions/shift.actions.ts"
+    },
+    "6037a2bd3feebec05b6296e65f146bdf0e5c299ae7": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteShift",
+          "filename": "lib/actions/shift.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "deleteShift",
+      "filename": "lib/actions/shift.actions.ts"
+    },
+    "6075f805fb9ba69fde2d7c104b581272688c942431": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "restoreShift",
+          "filename": "lib/actions/shift.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "restoreShift",
+      "filename": "lib/actions/shift.actions.ts"
+    },
+    "607f8c1838b71d10ccd6467ed4d7805d24f3c857cf": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createShift",
+          "filename": "lib/actions/shift.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "createShift",
+      "filename": "lib/actions/shift.actions.ts"
+    },
+    "60eb46ae6cf85f9a1d8a41ce273033a7a11a323555": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateShift",
+          "filename": "lib/actions/shift.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "updateShift",
+      "filename": "lib/actions/shift.actions.ts"
+    },
+    "0033a4aab8087bee60fa3957be6e412e7a28e6b142": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAllStaffUsers",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getAllStaffUsers",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "0040745eebb8809dbc98afe0103726da3438000754": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAllUsers",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getAllUsers",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "006095df662d1f5454db62806f7d257b4264768061": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getActingUserRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getActingUserRole",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "40103a556ce1c8f26a74594d1623582c17a19007fe": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUserProfile",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getUserProfile",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "401918a5b31d808cec1006f2b7ec1ed729ea95edbe": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "requireRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "requireRole",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "4029bb82f3e859aa7d1d5c000b17516a82e1704167": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createProfile",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "createProfile",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "4058e90462fbf4a2c11008bad52cf288efe05a8b32": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "assertRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "assertRole",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "40b6b27014bdc1a8fded8ff3d22be5fda4813317de": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getActingUser",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getActingUser",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "40c005c7807d025045aa1b80a1ad40fa0d179df6e8": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUserSignupIds",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "getUserSignupIds",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "60ceabe90fc8ed1b25017daee808de48043d157a6e": {
+      "workers": {
+        "app/admin/shifts/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/shifts/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/shift.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateUserRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/shifts/[id]/page": "rsc"
+      },
+      "exportedName": "updateUserRole",
+      "filename": "lib/actions/profile.actions.ts"
+    }
+  },
+  "edge": {}
+}

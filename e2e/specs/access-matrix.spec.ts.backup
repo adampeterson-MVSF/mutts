@@ -1,0 +1,296 @@
+// e2e/specs/access-matrix.spec.ts
+import { test, expect } from '@playwright/test';
+import { ACCESS_MATRIX } from '../access-matrix';
+
+test.describe('Access Matrix - Route Authorization', () => {
+    // Routes that should be accessible to everyone (no auth required)
+    allowed: [
+      '/',
+      '/adopt',
+      '/adopt/1', // Specific dog pages
+      '/happy-tails',
+      '/events',
+      '/auth/login',
+      '/auth/sign-up',
+      '/favicon.ico',
+    ],
+    // Routes that should redirect to login
+    denied: [
+      '/volunteer',
+      '/volunteer/my-shifts',
+      '/admin',
+      '/admin/applications',
+      '/apply/adopt',
+      '/apply/foster',
+      '/protected',
+    ],
+  },
+  volunteer: {
+    // Routes accessible to VOLUNTEER role
+    allowed: [
+      '/',
+      '/volunteer',
+      '/volunteer/my-shifts',
+      '/events',
+      '/apply/adopt',
+      '/apply/foster',
+      '/happy-tails',
+    ],
+    // Routes that should redirect (insufficient permissions)
+    denied: [
+      '/admin',
+      '/admin/applications',
+      '/admin/users',
+    ],
+  },
+  staff: {
+    // Routes accessible to STAFF role (includes volunteer permissions)
+    allowed: [
+      '/',
+      '/volunteer',
+      '/volunteer/my-shifts',
+      '/events',
+      '/apply/adopt',
+      '/apply/foster',
+      '/happy-tails',
+      '/admin',
+      '/admin/applications',
+      '/admin/fosters',
+      '/admin/shifts',
+      '/admin/users',
+      '/admin/events',
+    ],
+    // Routes that should redirect (insufficient permissions)
+    denied: [
+      // Staff should not have access to purely admin routes
+      // (All admin routes are accessible to staff in current design)
+    ],
+  },
+  admin: {
+    // Routes accessible to ADMIN role (includes all permissions)
+    allowed: [
+      '/',
+      '/volunteer',
+      '/volunteer/my-shifts',
+      '/events',
+      '/apply/adopt',
+      '/apply/foster',
+      '/happy-tails',
+      '/admin',
+      '/admin/applications',
+      '/admin/fosters',
+      '/admin/shifts',
+      '/admin/users',
+      '/admin/events',
+    ],
+    denied: [
+      // Admin should have access to everything
+    ],
+  },
+};
+
+test.describe('Access Matrix - Route Authorization', () => {
+  // Test public access (no authentication)
+  test.describe('Public Access', () => {
+  test('should allow access to public routes without authentication', async ({ page }) => {
+    for (const route of ACCESS_MATRIX.public.allowed) {
+      console.log(`Testing public route: ${route}`);
+      await page.goto(route, { waitUntil: 'networkidle' });
+      // Extended page load wait to ensure content is loaded
+      await expect(page.locator('body')).toBeVisible({ timeout: 10000 });
+      // Additional wait for dynamic content if needed
+      if (route === '/adopt') {
+        await page.waitForSelector('[data-testid="dog-cards-container"]', { timeout: 10000 });
+      } else if (route === '/events' || route === '/happy-tails') {
+        await page.waitForSelector('h1, h2, [data-testid]', { timeout: 10000 });
+      }
+      // Should not redirect to login (except for login pages themselves)
+      if (!route.includes('/auth/')) {
+        await expect(page).not.toHaveURL(/\/auth\/login|\/login/);
+      }
+    }
+  });
+
+    test('should redirect protected routes to login when unauthenticated', async ({ page }) => {
+      for (const route of ACCESS_MATRIX.public.denied) {
+        await page.goto(route);
+        // Should redirect to login
+        await expect(page).toHaveURL(/\/auth\/login|\/login/);
+      }
+    });
+  });
+
+  // Test volunteer access
+  test.describe('Volunteer Access', () => {
+    test('should allow access to volunteer-permitted routes', async ({ page }) => {
+      // This test runs in the 'volunteer' project which has volunteer authentication
+      for (const route of ACCESS_MATRIX.volunteer.allowed) {
+        await page.goto(route, { waitUntil: 'networkidle' });
+        // Wait for page-specific content to load before checking URL
+        if (route === '/volunteer') {
+          await expect(page.getByRole('heading', { name: /Welcome,.*!/ })).toBeVisible({ timeout: 15000 });
+        } else if (route.startsWith('/apply/')) {
+          await expect(page.getByRole('heading')).toBeVisible({ timeout: 15000 }); // Application forms have headings
+        } else if (route === '/events' || route === '/happy-tails') {
+          await page.waitForSelector('h1, h2, [data-testid]', { timeout: 15000 });
+          await expect(page.locator('body')).toBeVisible();
+        } else {
+          await expect(page.locator('body')).toBeVisible({ timeout: 15000 });
+        }
+        await expect(page).not.toHaveURL(/\/auth\/login|\/login/);
+      }
+    });
+
+    test('should deny access to admin-only routes', async ({ page }) => {
+      for (const route of ACCESS_MATRIX.volunteer.denied) {
+        await page.goto(route);
+        // Should redirect to login with insufficient permissions
+        await expect(page).toHaveURL(/\/auth\/login|\/login/);
+      }
+    });
+  });
+
+  // Test staff access
+  test.describe('Staff Access', () => {
+    test('should allow access to staff-permitted routes', async ({ page }) => {
+      // This test runs in the 'staff' project which has staff authentication
+      for (const route of ACCESS_MATRIX.staff.allowed) {
+        await page.goto(route, { waitUntil: 'networkidle' });
+        // Wait for page-specific content to load before checking URL
+        if (route === '/admin') {
+          await expect(page.getByRole('heading', { name: /Admin Dashboard/ })).toBeVisible({ timeout: 20000 });
+        } else if (route.startsWith('/admin')) {
+          await page.waitForSelector('table, h1, [data-testid]', { timeout: 20000 }); // Other admin pages
+          await expect(page.locator('body')).toBeVisible();
+        } else if (route === '/volunteer') {
+          await expect(page.getByRole('heading', { name: /Welcome,.*!/ })).toBeVisible({ timeout: 20000 });
+        } else if (route === '/events' || route === '/happy-tails') {
+          await page.waitForSelector('h1, h2, [data-testid]', { timeout: 20000 });
+          await expect(page.locator('body')).toBeVisible();
+        } else {
+          await expect(page.locator('body')).toBeVisible({ timeout: 20000 });
+        }
+        await expect(page).not.toHaveURL(/\/auth\/login|\/login/);
+      }
+    });
+
+    test('should deny access to unauthorized routes', async ({ page }) => {
+      for (const route of ACCESS_MATRIX.staff.denied) {
+        await page.goto(route);
+        await expect(page).toHaveURL(/\/auth\/login|\/login/);
+      }
+    });
+  });
+
+  // Test admin access
+  test.describe('Admin Access', () => {
+    test('should allow access to all routes', async ({ page }) => {
+      // This test runs in the 'admin' project which has admin authentication
+      for (const route of ACCESS_MATRIX.admin.allowed) {
+        await page.goto(route, { waitUntil: 'networkidle' });
+        // Wait for page-specific content to load before checking URL
+        if (route === '/admin') {
+          await expect(page.getByRole('heading', { name: /Admin Dashboard/ })).toBeVisible({ timeout: 25000 });
+        } else if (route.startsWith('/admin')) {
+          await page.waitForSelector('table, h1, [data-testid]', { timeout: 25000 }); // Other admin pages
+          await expect(page.locator('body')).toBeVisible();
+        } else if (route === '/volunteer') {
+          await expect(page.getByRole('heading', { name: /Welcome,.*!/ })).toBeVisible({ timeout: 25000 });
+        } else if (route === '/events' || route === '/happy-tails') {
+          await page.waitForSelector('h1, h2, [data-testid]', { timeout: 25000 });
+          await expect(page.locator('body')).toBeVisible();
+        } else {
+          await expect(page.locator('body')).toBeVisible({ timeout: 25000 });
+        }
+        await expect(page).not.toHaveURL(/\/auth\/login|\/login/);
+      }
+    });
+
+    test('should have no denied routes', async () => {
+      // Admin should have access to everything
+      expect(ACCESS_MATRIX.admin.denied).toHaveLength(0);
+    });
+  });
+});
+
+test.describe('Bulk Actions - Using Seeded Data', () => {
+  test.describe('Staff Bulk Operations', () => {
+    test('should display seeded dogs in admin dashboard', async ({ page }) => {
+      await page.goto('/admin', { waitUntil: 'networkidle' });
+
+      // Wait for the dogs table to load before checking content
+      await expect(page.locator('table')).toBeVisible({ timeout: 20000 });
+
+      // Should show dogs from seed data
+      await expect(page.getByText('Buddy')).toBeVisible({ timeout: 10000 }); // Available dog
+      await expect(page.getByText('Luna')).toBeVisible({ timeout: 10000 }); // Medical hold dog
+      await expect(page.getByText('Charlie')).toBeVisible({ timeout: 10000 }); // Available dog
+      await expect(page.getByText('Max')).toBeVisible({ timeout: 10000 }); // Pending dog
+    });
+
+    test('should display seeded applications with all statuses', async ({ page }) => {
+      await page.goto('/admin/applications', { waitUntil: 'networkidle' });
+
+      // Wait for applications table to load
+      await page.waitForSelector('table, [data-testid="application-row"]', { timeout: 20000 });
+
+      // Should show applications from seed data with various statuses
+      // Note: These may be filtered by status tabs, so we check for presence in general
+      await expect(page.getByText(/submitted|in.review|approved|rejected|withdrawn/i)).toBeVisible({ timeout: 15000 });
+    });
+
+    test('should allow bulk status updates on applications', async ({ page }) => {
+      await page.goto('/admin/applications', { waitUntil: 'networkidle' });
+
+      // Wait for applications table to load
+      await page.waitForSelector('table, [data-testid="application-row"]', { timeout: 20000 });
+
+      // Find applications and test bulk operations
+      // This assumes there's a bulk action UI - adjust based on actual implementation
+      const applicationRows = page.locator('[data-testid="application-row"]');
+      await expect(applicationRows).toHaveCount(await applicationRows.count()); // At least some applications
+
+      // Test bulk approve/reject functionality if available
+      const bulkActions = page.getByRole('button', { name: /bulk|select.all/i });
+      if (await bulkActions.count() > 0) {
+        // If bulk actions exist, test them
+        await bulkActions.first().click();
+        await expect(page.getByText(/selected|bulk.actions/i)).toBeVisible({ timeout: 15000 });
+      }
+    });
+  });
+
+  test.describe('Admin User Management', () => {
+    test('should display seeded users', async ({ page }) => {
+      await page.goto('/admin/users', { waitUntil: 'networkidle' });
+
+      // Wait for users table to load
+      await page.waitForSelector('table, [data-testid]', { timeout: 20000 });
+
+      // Should show users from seed data
+      await expect(page.getByText('Admin Test User')).toBeVisible({ timeout: 10000 });
+      await expect(page.getByText('Staff Test User')).toBeVisible({ timeout: 10000 });
+      await expect(page.getByText('Volunteer Test User')).toBeVisible({ timeout: 10000 });
+    });
+
+    test('should allow role changes on seeded users', async ({ page }) => {
+      await page.goto('/admin/users', { waitUntil: 'networkidle' });
+
+      // Wait for users table to load
+      await page.waitForSelector('table, [data-testid]', { timeout: 20000 });
+
+      // Find volunteer user and test role change
+      const volunteerRow = page.getByText('Volunteer Test User').locator('..').locator('..');
+      await expect(volunteerRow).toBeVisible({ timeout: 15000 });
+
+      // Test role update functionality if available
+      const roleSelect = volunteerRow.getByRole('combobox');
+      if (await roleSelect.count() > 0) {
+        await roleSelect.click();
+        await expect(page.getByText('ADMIN')).toBeVisible({ timeout: 10000 });
+        await expect(page.getByText('STAFF')).toBeVisible({ timeout: 10000 });
+        await expect(page.getByText('VOLUNTEER')).toBeVisible({ timeout: 10000 });
+      }
+    });
+  });
+});

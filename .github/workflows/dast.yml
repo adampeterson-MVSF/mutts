@@ -1,0 +1,77 @@
+name: DAST Security Scan
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+    types: [ opened, synchronize, reopened ]
+
+jobs:
+  zap-baseline:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build application
+        run: npm run build
+
+      - name: Start application
+        run: npm start &
+        env:
+          NODE_ENV: test
+
+      - name: Wait for app to be ready
+        run: |
+          timeout 60 bash -c 'until curl -f http://localhost:3000 > /dev/null 2>&1; do sleep 2; done'
+
+      - name: Run ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.11.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target: 'http://localhost:3000'
+          rules_file_name: '.zap/rules.tsv'
+          cmd_options: '-a'
+          fail_action: true
+          artifact_name: 'zap-report'
+          format: 'sarif'
+          sarif_file: 'zap-report.sarif'
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: 'zap-report.sarif'
+        continue-on-error: true
+
+      - name: ZAP Scan Summary
+        if: always()
+        run: |
+          if [ -f zap-report.sarif ]; then
+            high=$(jq '[.runs[0].results[] | select(.level == "error")] | length' zap-report.sarif 2>/dev/null || echo "0")
+            medium=$(jq '[.runs[0].results[] | select(.level == "warning")] | length' zap-report.sarif 2>/dev/null || echo "0")
+
+            echo "## OWASP ZAP DAST Results" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Severity | Count |" >> $GITHUB_STEP_SUMMARY
+            echo "|----------|-------|" >> $GITHUB_STEP_SUMMARY
+            echo "| High     | $high  |" >> $GITHUB_STEP_SUMMARY
+            echo "| Medium   | $medium|" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+
+            if [ "$high" -gt 0 ]; then
+              echo "❌ High-severity vulnerabilities found. Review the ZAP report." >> $GITHUB_STEP_SUMMARY
+            else
+              echo "✅ No high-severity vulnerabilities found." >> $GITHUB_STEP_SUMMARY
+            fi
+          fi

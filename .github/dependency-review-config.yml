@@ -1,0 +1,23 @@
+fail_on_severity: moderate
+allow_ghsa_ids:
+  # Add GHSA IDs for vulnerabilities that are acceptable to ignore
+  # Example: - GHSA-xxxx-xxxx-xxxx
+
+vulnerability_check: true
+license_check: true
+fail_on_scopes:
+  - runtime
+
+allow_licenses:
+  - MIT
+  - ISC
+  - BSD-2-Clause
+  - BSD-3-Clause
+  - Apache-2.0
+  - CC0-1.0
+  - 0BSD
+
+deny_licenses:
+  - MS-PL
+  - WTFPL
+  - JSON

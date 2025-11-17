@@ -1,0 +1,440 @@
+{
+  "node": {
+    "000856392be4f7d53ed3e3e3326c2c888c8e2950e9": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getSSRUser",
+          "filename": "lib/auth/session.server.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "getSSRUser",
+      "filename": "lib/auth/session.server.ts"
+    },
+    "401573de31f80211180e4bb5b293670b9e5de2cac8": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getApplicationHistory",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "getApplicationHistory",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "401795e2db6a0e011a400212430725a0ada20bf1ad": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateApplicationStatusForm",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "updateApplicationStatusForm",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "403ad5ef5391b2aca03196163ad596a4fefd38e607": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getApplicationById",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "getApplicationById",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "40c08f5bfbcbbf157560ddb0f51d8e40995af7028d": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAllApplications",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "getAllApplications",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "40c2e8066b223132b8b5aa0890c563e4352dd93472": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUserApplications",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "getUserApplications",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "40e91884295e284975fcf38d1438572253eb5d958f": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "submitApplication",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "submitApplication",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "60147ead8af5b60d1fc3fb8a6c8d6f3f3c34d57f06": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "bulkAssignApplications",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "action-browser"
+      },
+      "exportedName": "bulkAssignApplications",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "6028ec7b04b95b518845748dc7dc80ad5e3e43eaaf": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createApplication",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "createApplication",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "603b922ea1c90a4064f4774c9722a3b402b978e3e1": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "exportApplicationsCSV",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "action-browser"
+      },
+      "exportedName": "exportApplicationsCSV",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "606d62df0ce2c836357154fd3533068321cbf66dc1": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateApplicationStatus",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "updateApplicationStatus",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "607bdf719ac6999081505859589fc797257716012a": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "bulkUpdateApplications",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "action-browser"
+      },
+      "exportedName": "bulkUpdateApplications",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "70c7debef77309b094918bec2b57b1714c25488914": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "bulkUpdateApplicationStatus",
+          "filename": "lib/actions/application.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "bulkUpdateApplicationStatus",
+      "filename": "lib/actions/application.actions.ts"
+    },
+    "0033a4aab8087bee60fa3957be6e412e7a28e6b142": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAllStaffUsers",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "action-browser"
+      },
+      "exportedName": "getAllStaffUsers",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "0040745eebb8809dbc98afe0103726da3438000754": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAllUsers",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "getAllUsers",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "006095df662d1f5454db62806f7d257b4264768061": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getActingUserRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "getActingUserRole",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "40103a556ce1c8f26a74594d1623582c17a19007fe": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUserProfile",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "getUserProfile",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "401918a5b31d808cec1006f2b7ec1ed729ea95edbe": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "requireRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "requireRole",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "4029bb82f3e859aa7d1d5c000b17516a82e1704167": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createProfile",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "createProfile",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "4058e90462fbf4a2c11008bad52cf288efe05a8b32": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "assertRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "assertRole",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "40b6b27014bdc1a8fded8ff3d22be5fda4813317de": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getActingUser",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "getActingUser",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "40c005c7807d025045aa1b80a1ad40fa0d179df6e8": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUserSignupIds",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "getUserSignupIds",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "60ceabe90fc8ed1b25017daee808de48043d157a6e": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateUserRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "updateUserRole",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "7034bdf79cc2f006fa55b1369b0944a2475ffc1154": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "withAudit",
+          "filename": "lib/audit/withAudit.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "withAudit",
+      "filename": "lib/audit/withAudit.ts"
+    },
+    "00842318b15abb8899f8a126d649c3887e25bc26dd": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getCurrentUserId",
+          "filename": "lib/actions/audit.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "getCurrentUserId",
+      "filename": "lib/actions/audit.actions.ts"
+    },
+    "60e65605f915ad978cc1eff7d71f6bc5ae162e6026": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "captureAuditState",
+          "filename": "lib/actions/audit.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "captureAuditState",
+      "filename": "lib/actions/audit.actions.ts"
+    },
+    "784b13a691424b9961dce89e697a2618dca525da25": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "withAudit",
+          "filename": "lib/actions/audit.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "withAudit",
+      "filename": "lib/actions/audit.actions.ts"
+    },
+    "784b3fb4320f38bcac735db6d70fae03d038f392f6": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logDogAudit",
+          "filename": "lib/actions/audit.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "logDogAudit",
+      "filename": "lib/actions/audit.actions.ts"
+    },
+    "78ed9814381cdb54d982538f79494c008b83c58d6f": {
+      "workers": {
+        "app/admin/applications/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/applications/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/application.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/audit/withAudit.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logApplicationAudit",
+          "filename": "lib/actions/audit.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/applications/page": "rsc"
+      },
+      "exportedName": "logApplicationAudit",
+      "filename": "lib/actions/audit.actions.ts"
+    }
+  },
+  "edge": {}
+}

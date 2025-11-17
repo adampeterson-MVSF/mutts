@@ -1,0 +1,106 @@
+title = "gitleaks config"
+
+[[rules]]
+id = "generic-api-key"
+description = "Generic API Key"
+regex = '''(?i)(api[_-]?key|apikey)(["'\s]*)([a-z0-9]{32,})'''
+secretGroup = 3
+entropy = 3.5
+
+[[rules]]
+id = "aws-access-key"
+description = "AWS Access Key"
+regex = '''(AWS|aws|Aws)?_?ACCESS_?KEY(=|["'\s]*)([A-Z0-9]{20})'''
+secretGroup = 3
+
+[[rules]]
+id = "aws-secret-key"
+description = "AWS Secret Key"
+regex = '''(AWS|aws|Aws)?_?SECRET_?KEY(=|["'\s]*)([A-Za-z0-9+/=]{40})'''
+secretGroup = 3
+
+[[rules]]
+id = "slack-webhook"
+description = "Slack Webhook"
+regex = '''https://hooks\.slack\.com/services/T[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8}/[a-zA-Z0-9_]{24}'''
+
+[[rules]]
+id = "github-token"
+description = "GitHub Personal Access Token"
+regex = '''ghp_[a-zA-Z0-9]{36}'''
+
+[[rules]]
+id = "private-key"
+description = "Private Key"
+regex = '''-----BEGIN [A-Z ]*PRIVATE KEY-----'''
+
+[[rules]]
+id = "supabase-anon-key"
+description = "Supabase Anonymous Key"
+regex = '''eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+'''
+
+[[rules]]
+id = "supabase-service-key"
+description = "Supabase Service Role Key"
+regex = '''eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.[a-zA-Z0-9_-]{100,}'''
+
+[[rules]]
+id = "database-url"
+description = "Database Connection URL"
+regex = '''(postgresql|mysql|mongodb)://[^"'\s]+'''
+
+[[rules]]
+id = "stripe-secret"
+description = "Stripe Secret Key"
+regex = '''sk_(test|live)_[a-zA-Z0-9]{24}'''
+
+[[rules]]
+id = "sendgrid-api-key"
+description = "SendGrid API Key"
+regex = '''SG\.[a-zA-Z0-9_-]{22}\.[a-zA-Z0-9_-]{43}'''
+
+[extend]
+# Use default rules in addition to custom ones
+useDefaultRules = true
+
+[allowlist]
+description = "allowlisted files"
+files = [
+  '''^(.*/)?\.env\.example$''',
+  '''^(.*/)?\.env\.local\.example$''',
+  '''^(.*/)?test.*\.ts$''',
+  '''^(.*/)?.*\.test\.ts$''',
+  '''^(.*/)?.*\.spec\.ts$''',
+  '''^(.*/)?coverage/.*''',
+  '''^(.*/)?node_modules/.*''',
+  '''^(.*/)?\.next/.*''',
+  '''^(.*/)?build\.log$''',
+  '''^(.*/)?lint$''',
+]
+
+[allowlist]
+description = "allowlisted paths"
+paths = [
+  '''test''',
+  '''__tests__''',
+  '''e2e''',
+  '''coverage''',
+  '''node_modules''',
+  '''\.next''',
+  '''\.git''',
+]
+
+[allowlist]
+description = "allowlisted commits"
+commits = [
+  '''^WIP:.*''',
+  '''^fix:.*''',
+  '''^feat:.*''',
+  '''^chore:.*''',
+  '''^docs:.*''',
+  '''^refactor:.*''',
+  '''^test:.*''',
+  '''^ci:.*''',
+  '''^Merge.*''',
+  '''^Revert.*''',
+]

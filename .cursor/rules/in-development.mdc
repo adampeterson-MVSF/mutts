@@ -1,0 +1,10 @@
+---
+alwaysApply: true
+---
+this project is in the development phase and there are no users. Do not worry about backward compatibility.  
+
+We can use the supabase instance for all stages because it is placeholder data for development.  
+
+We do not need to set up multiple environments.  We are in development, there is no production and all tests are development related.  
+
+

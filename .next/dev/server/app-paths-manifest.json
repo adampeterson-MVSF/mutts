@@ -1,0 +1,19 @@
+{
+  "/admin/add-dog/page": "app/admin/add-dog/page.js",
+  "/admin/applications/[id]/page": "app/admin/applications/[id]/page.js",
+  "/admin/applications/page": "app/admin/applications/page.js",
+  "/admin/dog/[id]/log/page": "app/admin/dog/[id]/log/page.js",
+  "/admin/dog/[id]/page": "app/admin/dog/[id]/page.js",
+  "/admin/dogs/page": "app/admin/dogs/page.js",
+  "/admin/edit-dog/[id]/page": "app/admin/edit-dog/[id]/page.js",
+  "/admin/events/page": "app/admin/events/page.js",
+  "/admin/fosters/page": "app/admin/fosters/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/shifts/page": "app/admin/shifts/page.js",
+  "/admin/users/page": "app/admin/users/page.js",
+  "/adopt/[id]/page": "app/adopt/[id]/page.js",
+  "/adopt/page": "app/adopt/page.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/events/page": "app/events/page.js",
+  "/page": "app/page.js"
+}

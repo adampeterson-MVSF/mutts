@@ -1,0 +1,28 @@
+
+> build
+> next build
+
+   ▲ Next.js 16.0.1 (Turbopack)
+   - Environments: .env.local, .env
+
+ ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 2.5s
+   Running TypeScript ...
+   Collecting page data ...
+   Generating static pages (0/44) ...
+   Generating static pages (11/44) 
+ ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/auth/login". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at S (/Users/adampeterson/Github/mutts/.next/server/chunks/ssr/node_modules_next_9c24ba8d._.js:2:2111)
+    at p (/Users/adampeterson/Github/mutts/.next/server/chunks/ssr/node_modules_next_9c24ba8d._.js:4:4847)
+    at l (/Users/adampeterson/Github/mutts/.next/server/chunks/ssr/[root-of-the-server]__27878c1e._.js:1:21487)
+    at ir (/Users/adampeterson/Github/mutts/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:84433)
+    at ia (/Users/adampeterson/Github/mutts/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:86252)
+    at ia (/Users/adampeterson/Github/mutts/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:104739)
+    at il (/Users/adampeterson/Github/mutts/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:107981)
+    at is (/Users/adampeterson/Github/mutts/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:105399)
+    at ig (/Users/adampeterson/Github/mutts/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:112864)
+    at iu (/Users/adampeterson/Github/mutts/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:110013)
+Error occurred prerendering page "/auth/login". Read more: https://nextjs.org/docs/messages/prerender-error
+Export encountered an error on /auth/login/page: /auth/login, exiting the build.
+ ⨯ Next.js build worker exited with code: 1 and signal: null

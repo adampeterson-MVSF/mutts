@@ -1,0 +1,18 @@
+module.exports = [
+"[project]/node_modules/next/headers.js [app-rsc] (ecmascript, async loader)", ((__turbopack_context__) => {
+
+__turbopack_context__.v((parentImport) => {
+    return Promise.resolve().then(() => {
+        return parentImport("[project]/node_modules/next/headers.js [app-rsc] (ecmascript)");
+    });
+});
+}),
+"[project]/lib/supabase/server.ts [app-rsc] (ecmascript, async loader)", ((__turbopack_context__) => {
+
+__turbopack_context__.v((parentImport) => {
+    return Promise.resolve().then(() => {
+        return parentImport("[project]/lib/supabase/server.ts [app-rsc] (ecmascript)");
+    });
+});
+}),
+];

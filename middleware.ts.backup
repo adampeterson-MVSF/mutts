@@ -1,0 +1,290 @@
+import { createServerClient } from "@supabase/ssr";
+import { NextResponse, type NextRequest } from "next/server";
+import { UserRole } from "@prisma/client";
+import { hasEnvVars } from "@/lib/utils";
+import { authRequiredRedirect, insufficientPermissionsRedirect } from "@/lib/auth-redirect";
+
+// Import helper functions
+import { createLogger, logAccessDenied } from "@/lib/middleware/logging";
+import {
+  getClientIP,
+  checkRateLimit,
+  createRateLimitResponse,
+  shouldBypassRateLimit
+} from "@/lib/middleware/rate-limit";
+import {
+  hasTestSecret,
+  handleTestEndpoints,
+  createSyntheticTestClaims
+} from "@/lib/middleware/test-validation";
+import {
+  applySecurityHeaders,
+  createServiceUnavailableResponse
+} from "@/lib/middleware/security-headers";
+
+// Single source of truth for route definitions
+import {
+  getRequiredRole,
+  hasSufficientRole,
+  matchesRoute,
+  PUBLIC_PATHS
+} from "@/lib/routes";
+
+export async function middleware(request: NextRequest): Promise<NextResponse> {
+  console.log('[MIDDLEWARE] START - pathname:', request.nextUrl.pathname, 'headers:', Object.fromEntries(request.headers.entries()));
+  const clientIP = getClientIP(request);
+  const pathname = request.nextUrl.pathname;
+  const testSecret = hasTestSecret(request);
+  console.log('[MIDDLEWARE] testSecret check:', testSecret, 'expected:', process.env.TEST_SECRET ?? 'test-secret-default');
+  const logger = createLogger(process.env.LOG_MIDDLEWARE === '1');
+
+  // EARLY TEST SESSION SETUP: Set up synthetic sessions for test mode BEFORE any path checks
+  // This ensures even public test routes like /test/whoami can access test user context
+  let modifiedRequest = request;
+  if (testSecret) {
+
+  // EARLY TEST SESSION SETUP: Set up synthetic sessions for test mode BEFORE any path checks
+  // This ensures even public test routes like /test/whoami can access test user context
+  let modifiedRequest = request;
+  if (testSecret) {
+    console.log('[MIDDLEWARE] Processing test-mode request (early)', {
+      pathname,
+      hasTestSecret: testSecret,
+      testSecretValue: request.headers.get('x-test-secret')?.substring(0, 10) + '...',
+      cookies: request.cookies.getAll().map(c => c.name)
+    });
+
+    // Check if we need to create synthetic claims for this request
+    const syntheticClaims = await createSyntheticTestClaims(modifiedRequest, console, pathname);
+    if (syntheticClaims) {
+      console.log('[MIDDLEWARE] Created synthetic claims (early)', {
+        pathname,
+        syntheticRole: syntheticClaims.app_metadata?.role,
+        syntheticUserId: syntheticClaims.sub
+      });
+
+      // Set request headers to propagate synthetic session info to Server Components
+      const requestHeaders = new Headers(request.headers);
+      requestHeaders.set('x-test-user-id', syntheticClaims.sub);
+      requestHeaders.set('x-test-user-role', syntheticClaims.app_metadata?.role || 'VOLUNTEER');
+
+      console.log('[MIDDLEWARE] Set headers:', {
+        'x-test-user-id': syntheticClaims.sub,
+        'x-test-user-role': syntheticClaims.app_metadata?.role || 'VOLUNTEER'
+      });
+
+      // Update the request for downstream processing
+      modifiedRequest = new Request(request.url, {
+        ...request,
+        headers: requestHeaders,
+      });
+    } else {
+      console.log('[MIDDLEWARE] No synthetic claims created');
+    }
+  } else {
+    console.log('[MIDDLEWARE] Not test mode, testSecret:', testSecret);
+  }
+
+  // EARLY EXIT for public paths - allow without authentication
+  const isPublicPath = PUBLIC_PATHS.some(pattern => matchesRoute(pathname, pattern)) ||
+    pathname.startsWith('/_next/') ||
+    pathname.match(/\.(svg|png|jpg|jpeg|gif|webp)$/);
+
+  if (isPublicPath) {
+    const response = NextResponse.next({ request: modifiedRequest });
+    return applySecurityHeaders(response);
+  }
+
+  logger.info('Incoming request', {
+    pathname,
+    method: request.method,
+    clientIP,
+    hasTestSecret: testSecret,
+    userAgent: request.headers.get('user-agent')?.substring(0, 100),
+  });
+
+  // 1) EARLY EXIT for test-only endpoints
+  logger.info(`[TEST API] Routing test endpoint: ${pathname}`);
+  const testEndpointResponse = handleTestEndpoints(request, pathname, logger);
+  if (testEndpointResponse) {
+    return testEndpointResponse;
+  }
+
+  const rateLimitBypassActive = shouldBypassRateLimit(testSecret);
+
+  // Rate limiting for auth endpoints (before authentication check)
+  if (pathname.startsWith('/auth/') || pathname.startsWith('/api/auth/')) {
+    if (rateLimitBypassActive) {
+      logger.info('Skipping auth rate limiting (test bypass active)', { pathname, hasTestSecret: testSecret });
+    } else {
+      const rateLimitResult = await checkRateLimit(clientIP, 'auth', null);
+      if (!rateLimitResult.allowed) {
+        return createRateLimitResponse(
+          rateLimitResult.resetTime || Date.now(),
+          logger,
+          clientIP,
+          pathname
+        );
+      }
+    }
+  }
+
+  // FAIL-CLOSED: In production, if required env vars are missing, block all access
+  // This prevents silent security failures - no redirects, just 503 Service Unavailable
+  // Allow test mode to run without env vars for e2e testing (detected by NODE_ENV=test or test secret header)
+  if (!hasEnvVars) {
+    if (process.env.NODE_ENV === 'production' && !testSecret) {
+      logger.error('Fail-closed triggered: missing required env vars in production', { pathname });
+      return createServiceUnavailableResponse();
+    }
+    // In development/test, fall back to Supabase session management
+    logger.info('Allowing request without required env vars (non-production or test secret)', {
+      pathname,
+      hasTestSecret: testSecret,
+    });
+    const response = NextResponse.next({ request: modifiedRequest });
+    return applySecurityHeaders(response);
+  }
+
+  // Initialize response - will be updated if cookies need to be set
+  let supabaseResponse = NextResponse.next({ request: modifiedRequest });
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) =>
+            request.cookies.set(name, value),
+          );
+          supabaseResponse = NextResponse.next({
+            request,
+          });
+          cookiesToSet.forEach(({ name, value, options }) =>
+            supabaseResponse.cookies.set(name, value, options),
+          );
+        },
+      },
+    },
+  );
+
+  // IMPORTANT: Avoid running code between createServerClient and getClaims
+  // This invariant must be maintained for proper session handling
+  const { data } = await supabase.auth.getClaims();
+  let claims = data?.claims;
+
+  // Log test requests (session setup moved earlier)
+  if (testSecret) {
+    logger.info('Processing test-mode request', {
+      pathname,
+      hasTestSecret: testSecret,
+      testSecretValue: request.headers.get('x-test-secret')?.substring(0, 10) + '...',
+      cookies: request.cookies.getAll().map(c => c.name)
+    });
+  }
+
+  // Get user role from JWT claims (or synthetic claims)
+  const userClaims = claims;
+  const userRole = claims?.app_metadata?.role as UserRole | undefined;
+  const userId = claims?.sub || null;
+
+  // Rate limiting for API endpoints - differentiate by user role (after auth resolved)
+  if (pathname.startsWith('/api/') && !pathname.startsWith('/api/auth/')) {
+    if (rateLimitBypassActive) {
+      logger.info('Skipping API rate limiting (test bypass active)', { pathname, hasTestSecret: testSecret });
+    } else {
+      // Determine rate limit class based on user role
+      let endpoint: 'public' | 'api' | 'staff' | 'admin' = 'public';
+      if (userRole === UserRole.ADMIN) {
+        endpoint = 'admin';
+      } else if (userRole === UserRole.STAFF) {
+        endpoint = 'staff';
+      } else if (userRole === UserRole.VOLUNTEER || userId) {
+        endpoint = 'api'; // Authenticated but not staff/admin
+      }
+      
+      const rateLimitResult = await checkRateLimit(clientIP, endpoint, userId);
+      if (!rateLimitResult.allowed) {
+        return createRateLimitResponse(
+          rateLimitResult.resetTime || Date.now(), 
+          logger, 
+          clientIP, 
+          pathname
+        );
+      }
+    }
+  }
+
+  const requiredRole = getRequiredRole(pathname);
+
+  logger.info('Resolved user context', {
+    pathname,
+    requiredRole,
+    userRole,
+    userId,
+    hasClaims: !!userClaims,
+    hasTestSecret: testSecret,
+  });
+
+  // If route requires authentication but user is not authenticated
+  if (requiredRole !== null && !userClaims) {
+    logAccessDenied(pathname, userId, userRole || null, requiredRole);
+    logger.warn('Redirecting unauthenticated user to login', { pathname, requiredRole });
+    return authRequiredRedirect(request, pathname);
+  }
+
+  // If route requires specific role but user doesn't have sufficient role
+  if (requiredRole && userRole) {
+    const hasAccess = hasSufficientRole(requiredRole, userRole);
+
+    logger.info('Access check result', {
+      pathname,
+      requiredRole,
+      userRole,
+      hasAccess,
+      hasTestSecret: testSecret,
+    });
+
+    if (!hasAccess) {
+      logAccessDenied(pathname, userId, userRole, requiredRole);
+      logger.warn('Redirecting user due to insufficient role', {
+        pathname,
+        requiredRole,
+        userRole,
+      });
+      return insufficientPermissionsRedirect(request, pathname);
+    }
+  }
+
+  // API routes require additional scrutiny - don't broadly allow all /api/**
+  // Test endpoints are handled separately in their route handlers
+
+  // Apply security headers to the final response
+  applySecurityHeaders(supabaseResponse);
+
+  logger.info('Allowing request to continue', {
+    pathname,
+    requiredRole,
+    userRole,
+  });
+
+  return supabaseResponse;
+}
+
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * - images - .svg, .png, .jpg, .jpeg, .gif, .webp
+     * Feel free to modify this pattern to include more paths.
+     */
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+  ],
+};

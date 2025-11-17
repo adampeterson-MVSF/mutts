@@ -1,0 +1,177 @@
+name: Quarterly DR Drill
+
+on:
+  schedule:
+    # Run quarterly on the 1st day of Jan, Apr, Jul, Oct at 2 AM UTC
+    - cron: '0 2 1 1,4,7,10 *'
+  workflow_dispatch:
+    inputs:
+      backup_date:
+        description: 'Specific backup date to test (YYYY-MM-DD)'
+        required: false
+        type: string
+
+jobs:
+  dr-drill:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Setup test database
+        run: |
+          TEST_DB_URL="postgresql://postgres:postgres@localhost:5432/dr_test"
+          echo "DATABASE_URL_RESTORE=$TEST_DB_URL" >> $GITHUB_ENV
+
+          # Wait for PostgreSQL to be ready
+          timeout 60 bash -c 'until pg_isready -h localhost -p 5432; do sleep 2; done'
+
+          # Create test database
+          createdb -h localhost -p 5432 -U postgres dr_test
+
+      - name: Generate Prisma client
+        run: npx prisma generate
+
+      - name: Find backup file
+        id: find-backup
+        run: |
+          # Find most recent backup (or specific date if provided)
+          if [ -n "${{ github.event.inputs.backup_date }}" ]; then
+            BACKUP_PATTERN="backup-${{ github.event.inputs.backup_date }}.sql"
+          else
+            BACKUP_PATTERN="backup-*.sql"
+          fi
+
+          BACKUP_FILE=$(find db-backups -name "$BACKUP_PATTERN" -type f -printf '%T@ %p\n' 2>/dev/null | sort -n | tail -1 | cut -d' ' -f2-)
+
+          if [ -z "$BACKUP_FILE" ]; then
+            echo "No backup files found matching pattern: $BACKUP_PATTERN"
+            exit 1
+          fi
+
+          echo "backup_file=$BACKUP_FILE" >> $GITHUB_OUTPUT
+          echo "Found backup: $BACKUP_FILE"
+
+      - name: Run DR restore drill
+        run: |
+          chmod +x scripts/restore-from-backup.sh
+          ./scripts/restore-from-backup.sh "${{ steps.find-backup.outputs.backup_file }}"
+
+      - name: Generate DR metrics report
+        run: |
+          # Calculate metrics from the DR report
+          if [ -f dr-report-*.json ]; then
+            DR_REPORT=$(ls -t dr-report-*.json | head -1)
+            RTO=$(jq '.rto_seconds' "$DR_REPORT")
+            RPO=$(jq '.rpo_minutes' "$DR_REPORT")
+
+            echo "DR_METRICS<<EOF" >> $GITHUB_ENV
+            echo "Recovery Time Objective (RTO): ${RTO}s" >> $GITHUB_ENV
+            echo "Recovery Point Objective (RPO): ${RPO}min" >> $GITHUB_ENV
+            echo "Backup tested: ${{ steps.find-backup.outputs.backup_file }}" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+          fi
+
+      - name: Upload DR report
+        uses: actions/upload-artifact@v4
+        with:
+          name: dr-drill-report-${{ github.run_id }}
+          path: dr-report-*.json
+          retention-days: 90
+
+      - name: DR Drill Results
+        run: |
+          echo "## 🚨 Quarterly DR Drill Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Metrics" >> $GITHUB_STEP_SUMMARY
+          echo "${DR_METRICS:-No metrics available}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Status" >> $GITHUB_STEP_SUMMARY
+          if [ -f dr-report-*.json ] && [ "$(jq '.status' dr-report-*.json 2>/dev/null)" = '"SUCCESS"' ]; then
+            echo "✅ DR drill completed successfully" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ DR drill failed - manual intervention required" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "## 🚨 DR Drill Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The quarterly disaster recovery drill has failed." >> $GITHUB_STEP_SUMMARY
+          echo "Manual intervention is required to restore DR capabilities." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Review the DR drill logs and artifacts" >> $GITHUB_STEP_SUMMARY
+          echo "2. Verify backup integrity and restore procedures" >> $GITHUB_STEP_SUMMARY
+          echo "3. Update DR runbook if needed" >> $GITHUB_STEP_SUMMARY
+          echo "4. Schedule emergency DR testing" >> $GITHUB_STEP_SUMMARY
+
+  # Follow-up job to create issues for failed drills
+  create-issue:
+    runs-on: ubuntu-latest
+    needs: dr-drill
+    if: failure()
+
+    steps:
+      - name: Create DR failure issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `🚨 DR Drill Failed - ${new Date().toISOString().split('T')[0]}`;
+            const body = `
+            ## Disaster Recovery Drill Failure
+
+            The quarterly automated DR drill has failed. This requires immediate attention.
+
+            ### Details
+            - **Run**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            - **Date**: ${new Date().toISOString()}
+            - **Triggered**: ${{ github.event_name }}
+
+            ### Required Actions
+            - [ ] Review DR drill logs and identify root cause
+            - [ ] Verify backup file integrity
+            - [ ] Test manual restore procedures
+            - [ ] Update DR runbook with lessons learned
+            - [ ] Schedule additional DR testing
+
+            ### SLO Status
+            - **Target RTO**: < 30 minutes
+            - **Target RPO**: < 24 hours
+            - **Current Status**: ⚠️ Violated - manual intervention required
+
+            /cc @maintainers
+            `;
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['emergency', 'infrastructure', 'dr-drill']
+            });

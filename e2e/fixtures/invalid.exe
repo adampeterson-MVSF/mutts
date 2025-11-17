@@ -1,0 +1,3 @@
+This is a fake executable file used for testing file upload validation.
+It should be rejected by the server as an invalid file type.
+The content doesn't matter - it's the .exe extension that makes it invalid.

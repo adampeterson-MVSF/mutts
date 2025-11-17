@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/adampeterson/Github/mutts/lib/site.config.ts"],"sourcesContent":["// lib/site.config.ts - Centralized site configuration\n\nexport const siteConfig = {\n  // General donation URL used across the application\n  donationUrl: process.env.NEXT_PUBLIC_DONATION_URL || \"#\",\n\n  // Contact information\n  contact: {\n    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || \"contact@seniordogrescue.org\",\n  },\n\n  // Site metadata\n  name: \"Senior Dog Rescue\",\n  description: \"A dog rescue management platform built with modern web technologies\",\n} as const;\n"],"names":[],"mappings":"AAAA,sDAAsD;;;;;AAE/C,MAAM,aAAa;IACxB,mDAAmD;IACnD,aAAa,QAAQ,GAAG,CAAC,wBAAwB,IAAI;IAErD,sBAAsB;IACtB,SAAS;QACP,OAAO,QAAQ,GAAG,CAAC,yBAAyB,IAAI;IAClD;IAEA,gBAAgB;IAChB,MAAM;IACN,aAAa;AACf","debugId":null}}]
+}

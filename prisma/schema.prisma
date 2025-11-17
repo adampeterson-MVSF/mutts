@@ -1,0 +1,511 @@
+// This is your Prisma schema file.
+// Learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // This goes in your .env.local file
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ----------------------------------------------
+// ENUMS (for clean, predefined text fields)
+// ----------------------------------------------
+
+enum UserRole {
+  ADMIN
+  STAFF
+  VOLUNTEER
+}
+
+enum DogStatus {
+  INTAKE
+  MEDICAL_HOLD
+  AVAILABLE
+  PENDING
+  IN_FOSTER
+  ADOPTED
+  SANCTUARY
+}
+
+enum LogType {
+  WALK
+  BATHROOM
+  FEEDING
+  MEDICATION
+  NOTE
+}
+
+enum AppType {
+  ADOPTER
+  FOSTER
+}
+
+enum AppStatus {
+  SUBMITTED
+  IN_REVIEW
+  APPROVED
+  REJECTED
+  WITHDRAWN
+}
+
+enum MedicalRecordType {
+  VACCINATION
+  MEDICATION
+  VET_VISIT
+  NOTE // General medical note
+}
+
+enum HousingType {
+  OWN_HOME
+  RENT_HOME
+  OWN_APT_CONDO
+  RENT_APT_CONDO
+  OTHER
+}
+
+enum YardType {
+  YES
+  NO
+  SHARED
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  UNKNOWN
+}
+
+enum DogSize {
+  TOY
+  SMALL
+  MEDIUM
+  LARGE
+  UNKNOWN
+}
+
+enum ActivityType {
+  NOTE
+  CALL
+  EMAIL
+  VISIT
+}
+
+enum AuditAction {
+  APPLICATION_STATUS_CHANGE
+  DOG_EDIT
+  DOG_STATUS_CHANGE
+  FOSTER_ASSIGNMENT
+  MEDICAL_DOCUMENT_UPLOAD
+  MEDICAL_DOCUMENT_DELETE
+  USER_DATA_DELETE
+  USER_DATA_EXPORT
+}
+
+// ----------------------------------------------
+// DATA MODELS
+// ----------------------------------------------
+
+// We call this `Profile` instead of `User` to match Supabase's
+// auth system. This table will be linked to `auth.users`.
+model Profile {
+  // This `id` MUST match the `id` from Supabase's `auth.users` table
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  role      UserRole @default(VOLUNTEER)
+  updatedAt DateTime @default(now()) @updatedAt
+
+  // A profile can create many log entries
+  logEntries LogEntry[]
+
+  // A volunteer can sign up for many shifts
+  shiftSignups VolunteerShiftSignup[]
+
+  // Foster profile capabilities (one-to-one)
+  fosterProfile FosterProfile?
+
+  // A profile can be assigned to many applications (staff assignments)
+  assignedApplications Application[] @relation("StaffAssignment")
+
+  // Audit logs created by this profile
+  auditLogs AuditLog[]
+
+  // Application audits created by this profile
+  applicationAudits ApplicationAudit[]
+
+  // Medical documents uploaded by this profile
+  medicalDocuments MedicalDocument[]
+
+  // Activity logs created by this profile
+  activityLogs ActivityLog[]
+
+  // Volunteer shift preferences and capacity
+  shiftCapacity   Int? // Max shifts per week (1-3)
+  prefersWeekdays Boolean? // True for weekday preference, false for weekend
+  prefersMornings Boolean? // True for morning preference, false for afternoon/evening
+
+  // Training flags for volunteers
+  trainingCompleted        Boolean @default(false)
+  backgroundCheckCompleted Boolean @default(false)
+
+  @@index([role]) // For role-based filtering
+}
+
+model Dog {
+  id              Int       @id @default(autoincrement())
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @default(now()) @updatedAt
+  name            String
+  status          DogStatus @default(INTAKE)
+  breed           String?   // Display text - normalize to lowercase/trimmed in server actions
+  breedId         Int?     // Nullable FK for future controlled vocabulary migration
+  dateOfBirth     DateTime?
+  bioPublic       String?
+  notesInternal   String?
+  specialNeeds    Boolean   @default(false)
+  primaryPhotoUrl String? // Set during intake process via internal placeholder asset
+
+  // NEW FIELDS
+  gender     Gender  @default(UNKNOWN)
+  weight_lbs Float?
+  size       DogSize @default(UNKNOWN)
+  mutt_id    String?
+  page_url   String?
+
+  // A dog can have many log entries
+  logEntries       LogEntry[]
+  // A dog can have many medical records
+  medicalRecords   MedicalRecord[]
+  // A dog can have many medical documents
+  medicalDocuments MedicalDocument[]
+
+  // --- Foster Assignment Fields ---
+  // INVARIANT: status != 'IN_FOSTER' OR foster_profile_id IS NOT NULL
+  // Enforced by CHECK constraint in migration 20251104172858_add_dog_status_foster_constraint
+  fosterProfile   FosterProfile? @relation(fields: [fosterProfileId], references: [profileId], onDelete: SetNull) // Set null when foster profile is deleted
+  fosterProfileId String?        @map("foster_profile_id") // Optional foreign key (String), map column name
+
+  // A dog can have many applications
+  applications Application[]
+
+  // A dog can have many activity logs
+  activityLogs ActivityLog[]
+
+  @@unique([page_url]) // Ensure page_url is unique if used as canonical identifier
+  @@index([status])
+  @@index([breed])
+  @@index([createdAt]) // For gallery queries sorted by creation date
+  @@index([updatedAt]) // For sorting recently updated dogs
+  @@index([status, updatedAt]) // For filtering by status and sorting by recent updates
+  @@index([status, breed]) // For admin filters combining status and breed
+  @@index([mutt_id])
+  @@index([gender])
+  @@index([size])
+  @@index([weight_lbs])
+  @@index([page_url])
+  @@map("dogs") // Optional: map table name
+}
+
+model LogEntry {
+  id        Int      @id @default(autoincrement())
+  timestamp DateTime @default(now())
+  type      LogType
+  notes     String?
+
+  // Relation to the Dog
+  dog   Dog @relation(fields: [dogId], references: [id])
+  dogId Int
+
+  // Relation to the User (Profile)
+  user   Profile @relation(fields: [userId], references: [id])
+  userId String // This is the UUID from the Profile
+
+  @@index([timestamp])
+}
+
+model MedicalRecord {
+  id    Int               @id @default(autoincrement())
+  date  DateTime
+  type  MedicalRecordType // VACCINATION, MEDICATION, VET_VISIT, NOTE
+  notes String?
+  dog   Dog               @relation(fields: [dogId], references: [id], onDelete: Cascade)
+  dogId Int               @map("dog_id")
+
+  vaccination VaccinationRecord?
+  medication  MedicationRecord?
+  vetVisit    VetVisitRecord?
+
+  @@index([date])
+  @@map("medical_records")
+}
+
+model Application {
+  id              Int       @id @default(autoincrement())
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  applicationType AppType   @default(ADOPTER)
+  status          AppStatus @default(SUBMITTED)
+  statusNotes     String? // Audit notes for status changes
+
+  // Applications require a logged-in user (snapshot for data integrity)
+  profileId String
+
+  // Snapshot of profile data at time of submission
+  applicantName              String
+  applicantEmail             String
+  applicantPhone             String?
+  address                    String?
+  housingType                HousingType?
+  hasYard                    YardType?
+  yardFenced                 Boolean?
+  otherPets                  String?
+  vetName                    String?
+  vetPhone                   String?
+  homeEnvironmentDescription String?
+
+  // Staff applications dashboard fields
+  assignedToUserId String? // Profile.id of assigned staff member
+  submittedAt      DateTime @default(now()) // When the application was submitted
+
+  // Which dog? (Optional - applications can be general or target a specific dog)
+  dog   Dog? @relation(fields: [dogId], references: [id], onDelete: SetNull)
+  dogId Int?
+
+  // Application-specific fields
+  reason String
+
+  // Add the 1-to-many relation for references
+  references Reference[]
+
+  // Staff assignment relation
+  assignedToUser Profile? @relation("StaffAssignment", fields: [assignedToUserId], references: [id])
+
+  // Append-only audit trail for status changes
+  audits ApplicationAudit[]
+
+  @@index([status])
+  @@index([applicationType])
+  @@index([createdAt])
+  @@index([updatedAt]) // For sorting by recent updates
+  @@index([status, createdAt]) // For filtering by status and sorting by creation date
+  @@index([status, updatedAt]) // For filtering by status and sorting by recent updates
+  @@index([assignedToUserId]) // For filtering by assigned staff
+  @@map("applications")
+}
+
+// Append-only audit trail for application status changes
+model ApplicationAudit {
+  id            Int         @id @default(autoincrement())
+  createdAt     DateTime    @default(now())
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  applicationId Int
+  actor         Profile     @relation(fields: [actorId], references: [id])
+  actorId       String // Profile.id of the user who made the change
+
+  // Change details
+  oldStatus AppStatus? // Previous status
+  newStatus AppStatus // New status
+  note      String? // Reason for change (who/when/why)
+
+  @@index([applicationId])
+  @@index([createdAt])
+  @@index([actorId])
+  @@map("application_audits")
+}
+
+// --- ADD THIS ENTIRE MODEL ---
+model Reference {
+  id           Int     @id @default(autoincrement())
+  name         String
+  phone        String?
+  relationship String?
+
+  // Relation to the Application
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  applicationId Int
+}
+
+// --- NEW Shift Scheduling Models ---
+
+enum ShiftStatus {
+  ACTIVE
+  DELETED
+}
+
+model Shift {
+  id          Int         @id @default(autoincrement())
+  title       String // e.g., "Morning Walk Shift", "Adoption Event Setup"
+  description String? // Optional detailed description of the shift
+  startsAt    DateTime    @map("starts_at")
+  endsAt      DateTime    @map("ends_at")
+  capacity    Int?
+  status      ShiftStatus @default(ACTIVE)
+  deletedAt   DateTime?   @map("deleted_at") // Soft delete timestamp
+
+  // Relation: Many volunteers can sign up for one shift
+  signups VolunteerShiftSignup[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Transactional constraint: enforce endsAt > startsAt (checked in actions for DB compatibility)
+
+  @@index([startsAt])
+  @@index([status]) // For filtering active shifts
+  @@index([startsAt, status]) // Composite index for efficient queries
+  @@map("shifts")
+}
+
+model VolunteerShiftSignup {
+  id                 Int       @id @default(autoincrement())
+  signupTime         DateTime  @default(now()) @map("signup_time")
+  cancelledAt        DateTime? @map("cancelled_at") // Timestamp when signup was cancelled
+  cancellationReason String?   @map("cancellation_reason") // Reason for cancellation
+
+  // Relation to the Shift
+  shift   Shift @relation(fields: [shiftId], references: [id], onDelete: Cascade) // Delete signup if shift is deleted
+  shiftId Int   @map("shift_id")
+
+  // Relation to the Volunteer (Profile)
+  volunteer   Profile @relation(fields: [volunteerId], references: [id], onDelete: Cascade) // Delete signup if profile is deleted
+  volunteerId String  @map("volunteer_id") // UUID from Profile
+
+  // Prevent a volunteer from signing up for the same shift twice
+  @@unique([shiftId, volunteerId])
+  @@index([signupTime])
+  @@index([shiftId, cancelledAt]) // For efficient cancellation queries
+  @@map("volunteer_shift_signups")
+}
+
+model VaccinationRecord {
+  id              Int           @id @default(autoincrement())
+  medicalRecord   MedicalRecord @relation(fields: [medicalRecordId], references: [id], onDelete: Cascade)
+  medicalRecordId Int           @unique
+  vaccineType     String
+  nextDueDate     DateTime?
+  lotNumber       String?
+  vetName         String?
+
+  @@map("vaccination_records")
+}
+
+model MedicationRecord {
+  id              Int           @id @default(autoincrement())
+  medicalRecord   MedicalRecord @relation(fields: [medicalRecordId], references: [id], onDelete: Cascade)
+  medicalRecordId Int           @unique
+  medicationName  String
+  dosage          String?
+  frequency       String?
+
+  @@map("medication_records")
+}
+
+model VetVisitRecord {
+  id              Int           @id @default(autoincrement())
+  medicalRecord   MedicalRecord @relation(fields: [medicalRecordId], references: [id], onDelete: Cascade)
+  medicalRecordId Int           @unique
+  vetName         String?
+  visitReason     String?
+
+  @@map("vet_visit_records")
+}
+
+model FosterProfile {
+  profile           Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId         String  @id
+  hasCats           Boolean @default(false)
+  hasDogs           Boolean @default(false)
+  canAdministerMeds Boolean @default(false)
+  notes             String?
+  dogs              Dog[]
+
+  @@map("foster_profiles")
+}
+
+model MedicalDocument {
+  id               Int      @id @default(autoincrement())
+  dog              Dog      @relation(fields: [dogId], references: [id], onDelete: Cascade)
+  dogId            Int
+  name             String // original file name
+  mime             String // MIME type
+  size             Int // file size in bytes
+  path             String // filesystem key
+  uploadedByUser   Profile  @relation(fields: [uploadedByUserId], references: [id])
+  uploadedByUserId String
+  createdAt        DateTime @default(now())
+
+  @@index([dogId, createdAt])
+  @@map("medical_documents")
+}
+
+model ActivityLog {
+  id              Int          @id @default(autoincrement())
+  dogId           Int
+  dog             Dog          @relation(fields: [dogId], references: [id], onDelete: Cascade)
+  type            ActivityType // NOTE, CALL, EMAIL, VISIT
+  note            String
+  createdByUser   Profile      @relation(fields: [createdByUserId], references: [id])
+  createdByUserId String
+  createdAt       DateTime     @default(now())
+
+  @@index([dogId, createdAt])
+  @@map("activity_logs")
+}
+
+model Event {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  startTime   DateTime
+  endTime     DateTime
+  location    String?
+  capacity    Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([startTime])
+  @@map("events")
+}
+
+// Audit log models for sensitive changes
+model AuditLog {
+  id        Int         @id @default(autoincrement())
+  createdAt DateTime    @default(now())
+  action    AuditAction
+  actorId   String // Profile.id of the user who made the change
+
+  // Entity being audited - valid entityType values: "application" | "dog"
+  entityType String // Use helper functions logApplicationAudit/logDogAudit instead of raw inserts
+  entityId   Int // ID of the application or dog
+
+  // Change details
+  before Json? // Previous state as JSON
+  after  Json? // New state as JSON
+  note   String? // Optional note about the change
+
+  // Relations
+  actor Profile @relation(fields: [actorId], references: [id])
+
+  @@index([createdAt])
+  @@index([action])
+  @@index([entityType, entityId])
+  @@index([actorId])
+  @@map("audit_logs")
+}
+
+// Audit for shift cancellations (bulk operations)
+model ShiftCancellationAudit {
+  id            Int      @id @default(autoincrement())
+  shiftId       Int
+  actorUserId   String // Profile.id of the admin who cancelled
+  affectedCount Int // Number of signups cancelled in this operation
+  reason        String? // Reason for cancellation
+  createdAt     DateTime @default(now())
+
+  @@index([shiftId])
+  @@index([createdAt])
+  @@map("shift_cancellation_audits")
+}

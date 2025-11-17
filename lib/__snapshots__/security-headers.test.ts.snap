@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Security Headers > getSecurityHeaders > should return complete security headers object 1`] = `
+{
+  "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://via.placeholder.com https://picsum.photos https://scontent.xx.fbcdn.net https://external.xx.fbcdn.net https://dl5zpyw5k3jeb.cloudfront.net https://assets.adoptapet.com https://muttville.org; font-src 'self'; connect-src self; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "DENY",
+  "X-XSS-Protection": "1; mode=block",
+}
+`;

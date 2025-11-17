@@ -1,0 +1,35 @@
+# ZAP Scan Rules Configuration
+# Format: PluginID	AlertThreshold	AttackStrength
+# Thresholds: OFF, LOW, MEDIUM, HIGH
+# AttackStrength: LOW, MEDIUM, HIGH, INSANE
+
+# Disable rules that are not applicable or cause false positives
+50000	OFF	LOW	# Heartbleed OpenSSL Vulnerability (not applicable)
+50001	OFF	LOW	# Retrieved from the cache (expected for static assets)
+
+# Reduce noise from common patterns
+40012	MEDIUM	MEDIUM	# Cross Site Scripting (Reflected) - reduce false positives
+40014	MEDIUM	MEDIUM	# Cross Site Scripting (Persistent) - reduce false positives
+
+# Database-specific checks (PostgreSQL)
+40018	MEDIUM	MEDIUM	# SQL Injection
+
+# Authentication and session management
+40028	MEDIUM	MEDIUM	# Open Redirect
+40029	MEDIUM	MEDIUM	# Session ID in URL Rewrite
+
+# File and directory checks
+40022	MEDIUM	MEDIUM	# Application Error Disclosure
+40025	MEDIUM	MEDIUM	# Proxy Disclosure
+40026	MEDIUM	MEDIUM	# Cross Domain Misconfiguration
+
+# Web application vulnerabilities
+40016	MEDIUM	MEDIUM	# Cross Site Request Forgery
+40017	MEDIUM	MEDIUM	# Cross Domain Script Include
+
+# Infrastructure vulnerabilities
+40023	MEDIUM	MEDIUM	# Web Browser XSS Protection Not Enabled
+40027	MEDIUM	MEDIUM	# Information Disclosure - Suspicious Comments
+
+# Default configuration for unlisted rules
+DEFAULT	MEDIUM	MEDIUM

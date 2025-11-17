@@ -1,0 +1,680 @@
+{
+  "node": {
+    "000856392be4f7d53ed3e3e3326c2c888c8e2950e9": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getSSRUser",
+          "filename": "lib/auth/session.server.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getSSRUser",
+      "filename": "lib/auth/session.server.ts"
+    },
+    "000a10a8c48a2ee52ab05f736a025f0fc3430ed087": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getShelterDogs",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getShelterDogs",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "0019079e818e55751763ff78fc8ff027e9229acf81": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUniqueBreeds",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getUniqueBreeds",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "00636a5f955c055d9ae7354b912740525bc095ed8a": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getPotentialFosters",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getPotentialFosters",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "008eeddbd6b4383f36b57519240b05cda72ffd3c35": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUniqueStatuses",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getUniqueStatuses",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "0096a4418a44c207c9e46a0d0ea49723f0f5beafc6": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUniqueSizes",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getUniqueSizes",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "00ed911e85835f38bef24e726e75a3ce65626bc191": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAdoptedDogs",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getAdoptedDogs",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "00f408ca64ac5f31f6d33edb3fac1af6d3c4ec2139": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUniqueGenders",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getUniqueGenders",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "4000b6ce4b2fec5adc2908e05c9e975ec1809e896c": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getDogs",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getDogs",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "401755ca459dee27048e5cb1b2a37b68009c1a4264": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getDogDetailsById",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getDogDetailsById",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "408f99a89cce2e13a05568db8eaa3b51e83e52cdfe": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getDogById",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getDogById",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "40cafae7f99e5ce12881510a297b1881d628c95439": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAvailableDogs",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getAvailableDogs",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "40d4e8ed5df4b988b285b21be257cde22439748fb0": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAllDogs",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getAllDogs",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "40fc9b3430fa18ec08c7b11c01dade07f8ea8fad1a": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createDog",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "createDog",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "6033c3740bfb39b1d88f5bc1d4d6032abe7989c415": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteDog",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "deleteDog",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "607872d570086e997fa69c526f8b345ef1ac31b02c": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getRelatedDogs",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getRelatedDogs",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "6078f096910cca9f1b04ed2bc37d4889f49c930d80": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getDogMedicalBundle",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getDogMedicalBundle",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "6086ab75672e1233c1297a8296353e983681f5690e": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "uploadAndSetDogImage",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "uploadAndSetDogImage",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "60fe0a92564fcd68752aa0323d2abaea7708f4c303": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateDog",
+          "filename": "lib/actions/dog.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "updateDog",
+      "filename": "lib/actions/dog.actions.ts"
+    },
+    "40f76bfd7bcb677f9643e29693faaa12cfa523c42b": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getActivityLogs",
+          "filename": "lib/actions/log.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getActivityLogs",
+      "filename": "lib/actions/log.actions.ts"
+    },
+    "602567ac5276029aacd44ac542c7512a06be9049bd": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getRecentLogsForUser",
+          "filename": "lib/actions/log.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getRecentLogsForUser",
+      "filename": "lib/actions/log.actions.ts"
+    },
+    "6032377015ad0748f951a566cc22d0bd5ebf979fea": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUserActivityLogs",
+          "filename": "lib/actions/log.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getUserActivityLogs",
+      "filename": "lib/actions/log.actions.ts"
+    },
+    "60f6da050fee05d345b61006445947db72dee06ec9": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createActivityLog",
+          "filename": "lib/actions/log.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "action-browser"
+      },
+      "exportedName": "createActivityLog",
+      "filename": "lib/actions/log.actions.ts"
+    },
+    "0033a4aab8087bee60fa3957be6e412e7a28e6b142": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAllStaffUsers",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getAllStaffUsers",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "0040745eebb8809dbc98afe0103726da3438000754": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAllUsers",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getAllUsers",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "006095df662d1f5454db62806f7d257b4264768061": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getActingUserRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getActingUserRole",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "40103a556ce1c8f26a74594d1623582c17a19007fe": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUserProfile",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getUserProfile",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "401918a5b31d808cec1006f2b7ec1ed729ea95edbe": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "requireRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "requireRole",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "4029bb82f3e859aa7d1d5c000b17516a82e1704167": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createProfile",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "createProfile",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "4058e90462fbf4a2c11008bad52cf288efe05a8b32": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "assertRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "assertRole",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "40b6b27014bdc1a8fded8ff3d22be5fda4813317de": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getActingUser",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getActingUser",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "40c005c7807d025045aa1b80a1ad40fa0d179df6e8": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUserSignupIds",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getUserSignupIds",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "60ceabe90fc8ed1b25017daee808de48043d157a6e": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateUserRole",
+          "filename": "lib/actions/profile.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "updateUserRole",
+      "filename": "lib/actions/profile.actions.ts"
+    },
+    "00842318b15abb8899f8a126d649c3887e25bc26dd": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getCurrentUserId",
+          "filename": "lib/actions/audit.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getCurrentUserId",
+      "filename": "lib/actions/audit.actions.ts"
+    },
+    "60e65605f915ad978cc1eff7d71f6bc5ae162e6026": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "captureAuditState",
+          "filename": "lib/actions/audit.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "captureAuditState",
+      "filename": "lib/actions/audit.actions.ts"
+    },
+    "784b13a691424b9961dce89e697a2618dca525da25": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "withAudit",
+          "filename": "lib/actions/audit.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "withAudit",
+      "filename": "lib/actions/audit.actions.ts"
+    },
+    "784b3fb4320f38bcac735db6d70fae03d038f392f6": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logDogAudit",
+          "filename": "lib/actions/audit.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "logDogAudit",
+      "filename": "lib/actions/audit.actions.ts"
+    },
+    "78ed9814381cdb54d982538f79494c008b83c58d6f": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logApplicationAudit",
+          "filename": "lib/actions/audit.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "logApplicationAudit",
+      "filename": "lib/actions/audit.actions.ts"
+    },
+    "40287cd94b9cff320c8e99fba57a6d56392f11e4f0": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createMedicalRecord",
+          "filename": "lib/actions/medical.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "createMedicalRecord",
+      "filename": "lib/actions/medical.actions.ts"
+    },
+    "40d921d941a2041ebc5c9eff88111fc3bfe7944b41": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getMedicalDocuments",
+          "filename": "lib/actions/medical.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getMedicalDocuments",
+      "filename": "lib/actions/medical.actions.ts"
+    },
+    "600766ba61c2c48d02f4c6100c955c1b192d033ed2": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateMedicalRecord",
+          "filename": "lib/actions/medical.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "updateMedicalRecord",
+      "filename": "lib/actions/medical.actions.ts"
+    },
+    "601b63255f8808b6a72067724602b72547a1847b6a": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteMedicalRecord",
+          "filename": "lib/actions/medical.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "deleteMedicalRecord",
+      "filename": "lib/actions/medical.actions.ts"
+    },
+    "602b36ee92de0293b9d04aff8a21372f53586771ae": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "uploadMedicalDocument",
+          "filename": "lib/actions/medical.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "uploadMedicalDocument",
+      "filename": "lib/actions/medical.actions.ts"
+    },
+    "60e959ce08ff833f9a37b6a6da493f13faac95dfd1": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteMedicalDocument",
+          "filename": "lib/actions/medical.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "deleteMedicalDocument",
+      "filename": "lib/actions/medical.actions.ts"
+    },
+    "70ce82ca5043bbade27dded89d6e9542f4283b5ee4": {
+      "workers": {
+        "app/admin/dog/[id]/log/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/dog/[id]/log/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/auth/session.server.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/dog.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/lib/actions/log.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/lib/actions/profile.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/lib/actions/audit.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/lib/actions/medical.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getMedicalRecords",
+          "filename": "lib/actions/medical.actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/dog/[id]/log/page": "rsc"
+      },
+      "exportedName": "getMedicalRecords",
+      "filename": "lib/actions/medical.actions.ts"
+    }
+  },
+  "edge": {}
+}

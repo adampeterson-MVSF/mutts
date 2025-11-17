@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Next.js Image Configuration > remotePatterns allowlist > should have expected domains in allowlist 1`] = `
+[
+  "assets.adoptapet.com",
+  "dl5zpyw5k3jeb.cloudfront.net",
+  "external.xx.fbcdn.net",
+  "muttville.org",
+  "picsum.photos",
+  "scontent.xx.fbcdn.net",
+  "via.placeholder.com",
+]
+`;

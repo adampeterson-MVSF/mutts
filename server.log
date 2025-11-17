@@ -1,0 +1,22 @@
+
+> dev
+> next dev --turbopack
+
+   ▲ Next.js 16.0.1 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://10.0.0.101:3000
+   - Environments: .env.test.local, .env
+
+ ✓ Starting...
+ ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+ ✓ Ready in 788ms
+ GET / 200 in 3.8s (compile: 2.7s, proxy.ts: 144ms, render: 902ms)
+Health endpoint called!
+NODE_ENV: development
+EXPOSE_TEST_API: 1
+ALLOW_TEST_ENDPOINTS: 1
+TEST_SECRET: test-secret-default
+x-test-secret header: test-secret-default
+Health check - Access denied
+ GET /api/test-api/health 404 in 1328ms (compile: 1297ms, proxy.ts: 8ms, render: 23ms)
+[?25h

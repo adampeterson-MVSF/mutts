@@ -1,0 +1,39 @@
+name: Prod Invariants
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  env-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm ci
+      - run: npm run build:env
+
+  remote-patterns-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm ci
+      - run: npm run test:image-allowlist
+
+  prod-inert-test-endpoints:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Assert test routes are inert in prod
+        run: |
+          set -euo pipefail
+          URL="${STAGING_URL:?missing STAGING_URL}"
+          code=$(curl -s -o /dev/null -w "%{http_code}" "$URL/api/test-api/reset" || true)
+          if [ "$code" -eq 200 ] || [ "$code" -eq 204 ]; then
+            echo "❌ Test API responded in non-test env"; exit 1
+          fi
+          echo "✅ Test routes inert ($code)"
