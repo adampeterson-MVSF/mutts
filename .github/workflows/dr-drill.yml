@@ -96,7 +96,7 @@ jobs:
           fi
 
       - name: Upload DR report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: dr-drill-report-${{ github.run_id }}
           path: dr-report-*.json
