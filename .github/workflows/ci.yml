@@ -87,7 +87,7 @@ jobs:
           flags: unit
 
       - name: Upload coverage HTML report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: coverage-html-report
           path: coverage/
@@ -173,7 +173,7 @@ jobs:
           BASE_URL: http://localhost:3000
 
       - name: Upload test results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: always()
         with:
           name: playwright-report-${{ matrix.role }}
@@ -205,7 +205,7 @@ jobs:
           echo "{\"timestamp\": \"$(date -Iseconds)\", \"coverage\": $(jq '.total.lines.pct' coverage/coverage-summary.json), \"branches\": $(jq '.total.branches.pct' coverage/coverage-summary.json), \"functions\": $(jq '.total.functions.pct' coverage/coverage-summary.json), \"statements\": $(jq '.total.statements.pct' coverage/coverage-summary.json)}" > coverage/coverage-trend.json
 
       - name: Upload coverage trend
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: coverage-trend
           path: coverage/coverage-trend.json
